@@ -1,0 +1,9 @@
+# Netlify headers — lives in the publish root so it applies to zip/API deploys
+# (the root netlify.toml is only read on git-based builds).
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+/app/*
+  Cache-Control: public, max-age=300, must-revalidate
+/index.html
+  Cache-Control: public, max-age=0, must-revalidate
