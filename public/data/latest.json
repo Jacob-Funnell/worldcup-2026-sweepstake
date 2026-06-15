@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-15T18:22:51.074Z",
+  "generatedAt": "2026-06-15T18:42:53.836Z",
   "bracketDrawn": false,
   "tournamentOver": false,
   "leaderboard": [
@@ -6298,6 +6298,65 @@
     "topMover": null,
     "teamDeltas": []
   },
-  "fetchedAt": "2026-06-15T18:22:51.072Z",
+  "series": {
+    "days": [
+      "2026-06-11",
+      "2026-06-12",
+      "2026-06-13",
+      "2026-06-14",
+      "2026-06-15"
+    ],
+    "series": {
+      "lewis": {
+        "points": [
+          3,
+          4,
+          5,
+          9,
+          12
+        ],
+        "goals": [
+          2,
+          3,
+          4,
+          7,
+          12
+        ]
+      },
+      "arnold": {
+        "points": [
+          0,
+          3,
+          5,
+          8,
+          9
+        ],
+        "goals": [
+          0,
+          3,
+          6,
+          14,
+          15
+        ]
+      },
+      "mildred": {
+        "points": [
+          0,
+          1,
+          5,
+          12,
+          13
+        ],
+        "goals": [
+          0,
+          1,
+          6,
+          11,
+          11
+        ]
+      }
+    }
+  },
+  "fetchedAt": "2026-06-15T18:42:53.833Z",
   "dateLondon": "2026-06-15"
 }

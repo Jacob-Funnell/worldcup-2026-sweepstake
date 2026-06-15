@@ -139,6 +139,26 @@ export function compute(matches) {
   };
 }
 
+// Leaders-over-time. Reconstructs cumulative standings at the end of each
+// match-day from the start of the tournament — so the trend line is real from
+// day one even though daily snapshots only began later. Reuses compute() per
+// day so the series can never disagree with the live numbers.
+export function computeSeries(matches) {
+  const dayOf = (iso) => String(iso).slice(0, 10); // UTC calendar day
+  const days = [...new Set(matches.filter((m) => m.state !== 'pre').map((m) => dayOf(m.date)))].sort();
+  const series = {};
+  for (const key of PEOPLE_ORDER) series[key] = { points: [], goals: [] };
+  for (const d of days) {
+    const upto = matches.filter((m) => dayOf(m.date) <= d);
+    const p = compute(upto);
+    for (const g of p.leaderboard) {
+      series[g.key].points.push(g.total);
+      series[g.key].goals.push(g.gf);
+    }
+  }
+  return { days, series };
+}
+
 function furthestRound(reached, champion) {
   if (champion) return 'final';
   let best = 'group';

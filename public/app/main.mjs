@@ -3,8 +3,9 @@
 //  computes with the shared engine, and paints the page.
 // ─────────────────────────────────────────────────────────────────────────────
 import { fetchTournament } from './data-source.mjs';
-import { compute } from './compute.mjs';
+import { compute, computeSeries } from './compute.mjs';
 import { PEOPLE, SNAPSHOT } from './config.mjs';
+import { trendSection, trendSVG } from './chart.mjs';
 import * as UI from './ui.mjs';
 
 const $ = (s) => document.querySelector(s);
@@ -36,6 +37,7 @@ async function loadLive() {
   const { matches, fetchedAt } = await fetchTournament();
   if (!matches.length) throw new Error('empty feed');
   const p = compute(matches);
+  p.series = computeSeries(matches);
   p.fetchedAt = fetchedAt;
   return p;
 }
@@ -74,6 +76,11 @@ function paint(p) {
     </section>
 
     <section>
+      <div class="section-head"><h2>📈 The race so far</h2><span class="hint">leaders over time · toggle the prize</span></div>
+      ${trendSection(p.series)}
+    </section>
+
+    <section>
       <div class="section-head"><h2>🌅 Overnight movers</h2><span class="hint">what changed since yesterday morning</span></div>
       ${UI.renderMovers(p)}
     </section>
@@ -106,6 +113,17 @@ function paint(p) {
       </div>
     </section>`;
   wireTabs();
+  wireTrend(p.series);
+}
+
+function wireTrend(series) {
+  const holder = document.querySelector('#trend-svg');
+  const btns = [...document.querySelectorAll('.trend__btn')];
+  if (!holder || !series || !series.days?.length) return;
+  btns.forEach((b) => b.addEventListener('click', () => {
+    btns.forEach((x) => x.setAttribute('aria-selected', String(x === b)));
+    holder.innerHTML = trendSVG(series, b.dataset.mode);
+  }));
 }
 
 function wireTabs() {

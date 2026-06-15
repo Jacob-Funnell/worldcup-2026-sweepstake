@@ -9,7 +9,7 @@ import { readFileSync, writeFileSync, readdirSync, mkdirSync, existsSync } from 
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import { fetchTournament } from '../public/app/data-source.mjs';
-import { compute } from '../public/app/compute.mjs';
+import { compute, computeSeries } from '../public/app/compute.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DATA = join(__dirname, '..', 'public', 'data');
@@ -77,6 +77,7 @@ async function main() {
     throw new Error(`Matches-played regressed ${prev.matchesPlayed} → ${payload.stats.matchesPlayed} vs ${prev.date} — refusing to overwrite.`);
   }
   payload.movement = movement(payload, prev);
+  payload.series = computeSeries(matches);
   payload.fetchedAt = fetchedAt;
   payload.dateLondon = today;
 
