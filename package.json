@@ -1,0 +1,13 @@
+{
+  "name": "worldcup-2026-sweepstake",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Live World Cup 2026 sweepstake tracker — Lewis vs Arnold vs Mildred.",
+  "scripts": {
+    "build:data": "node scripts/build-data.mjs",
+    "serve": "node scripts/serve.mjs",
+    "morning": "node scripts/build-data.mjs"
+  },
+  "engines": { "node": ">=18" }
+}

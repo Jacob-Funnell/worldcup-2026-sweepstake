@@ -1,0 +1,7 @@
+node_modules/
+.DS_Store
+*.log
+.netlify/
+.env
+.env.*
+# Keep public/data/** committed — those snapshots power the overnight movers.

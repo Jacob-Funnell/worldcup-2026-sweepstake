@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#064a2a">
+  <title>World Cup 2026 Sweepstake · Lewis vs Arnold vs Mildred</title>
+  <meta name="description" content="Live World Cup 2026 sweepstake tracker — Lewis T. Duck (Jacob), Arnold the Elephant (Pete) and Captain Mildred (Matt). £10 to the winner, a drink for the Golden Boot.">
+  <meta property="og:title" content="World Cup 2026 Sweepstake">
+  <meta property="og:description" content="£10 to the winner, a drink for the Golden Boot. Live standings for Lewis, Arnold &amp; Mildred.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚽</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <div class="hero__eyebrow">⚽ FIFA World Cup 2026 · USA · Canada · Mexico</div>
+      <h1>The Sweepstake <span class="yr">'26</span></h1>
+      <p class="hero__sub">Lewis T. Duck, Arnold the Elephant &amp; Captain Mildred — 16 teams each, one trophy, and a drink on the line. May the best duck/elephant/captain win.</p>
+      <span class="live error" id="live"><span class="dot"></span><span class="live__txt">Loading…</span></span>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div id="app"></div>
+  </main>
+
+  <footer class="wrap foot">
+    <p>Live data from ESPN · auto-refreshed every morning at 8am UK · recomputed live whenever you open the page.</p>
+    <p>🟢 Lewis T. Duck = Jacob · 🔵 Arnold the Elephant = Pete · 🔴 Captain Mildred = Matt</p>
+  </footer>
+
+  <script type="module" src="./app/main.mjs"></script>
+</body>
+</html>
