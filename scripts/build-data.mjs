@@ -41,7 +41,7 @@ function previousSnapshot(todayDate) {
 function movement(payload, prev) {
   if (!prev) return { since: null, groupings: {}, topMover: null, teamDeltas: [] };
   const groupings = {};
-  let topMover = null, topGain = -Infinity;
+  let topMover = null, topGain = 0; // only a genuine points gain (>0) crowns a mover
   for (const g of payload.leaderboard) {
     const p = prev.groupings?.[g.key];
     const rankBefore = p?.rank ?? g.rank;
@@ -64,9 +64,18 @@ function movement(payload, prev) {
 async function main() {
   const today = londonDate();
   const { matches, fetchedAt } = await fetchTournament();
-  if (!matches.length) throw new Error('No matches returned from ESPN — refusing to overwrite.');
+  // The tournament always has 104 scheduled fixtures in the feed — a short feed
+  // means ESPN returned a truncated/partial response; refuse rather than clobber.
+  if (matches.length < 100) {
+    throw new Error(`ESPN feed looks truncated (${matches.length} fixtures, expected 104) — refusing to overwrite.`);
+  }
   const payload = compute(matches);
   const prev = previousSnapshot(today);
+  // Played count can only ever rise in a tournament. A drop is proof of a bad
+  // feed — abort so the morning job leaves the last good data in place.
+  if (prev && payload.stats.matchesPlayed < (prev.matchesPlayed ?? 0)) {
+    throw new Error(`Matches-played regressed ${prev.matchesPlayed} → ${payload.stats.matchesPlayed} vs ${prev.date} — refusing to overwrite.`);
+  }
   payload.movement = movement(payload, prev);
   payload.fetchedAt = fetchedAt;
   payload.dateLondon = today;

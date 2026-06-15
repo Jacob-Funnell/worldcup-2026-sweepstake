@@ -10,8 +10,14 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
 
-# Long-cache the immutable app modules/styles; data is fetched live at runtime.
+# Short cache on the app modules so a logic change goes live promptly during the
+# tournament (files are tiny). Data itself is fetched fresh at runtime.
 [[headers]]
   for = "/app/*"
   [headers.values]
-    Cache-Control = "public, max-age=3600"
+    Cache-Control = "public, max-age=300, must-revalidate"
+
+[[headers]]
+  for = "/index.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"

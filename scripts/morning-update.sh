@@ -20,7 +20,8 @@ if [ $RC -ne 0 ]; then echo "✗ build-data failed — leaving previous data unt
 # 2) Commit + push (history/<date>.json is new each day, so there's always a change).
 git add -A
 if ! git diff --cached --quiet; then
-  git commit -q -m "Daily snapshot $(date +%F)" && git push -q origin main && echo "✓ pushed to GitHub"
+  git commit -q -m "Daily snapshot $(date +%F)"
+  if git push -q origin main; then echo "✓ pushed to GitHub"; else echo "✗ git push failed"; exit 1; fi
 else
   echo "• nothing new to commit"
 fi
@@ -32,7 +33,7 @@ if [ -n "${TOKEN:-}" ]; then
   ( cd public && zip -rq /tmp/wc_site.zip . -x ".*" )
   CODE=$(curl -s -o /dev/null -w "%{http_code}" -X POST "https://api.netlify.com/api/v1/sites/$SITE_ID/deploys" \
     -H "Authorization: Bearer $TOKEN" -H "Content-Type: application/zip" --data-binary @/tmp/wc_site.zip)
-  echo "✓ Netlify redeploy HTTP $CODE"
+  if [ "$CODE" -ge 200 ] && [ "$CODE" -lt 300 ]; then echo "✓ Netlify redeploy HTTP $CODE"; else echo "✗ Netlify redeploy failed HTTP $CODE"; exit 1; fi
 else
   echo "• no Netlify token found — skipped redeploy (site still updates live)."
 fi

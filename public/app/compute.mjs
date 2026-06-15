@@ -9,7 +9,6 @@ import { TEAMS } from './draw.mjs';
 import { PEOPLE, PEOPLE_ORDER, SCORING, ROUND_META } from './config.mjs';
 
 const KO_ORDER = ['r32', 'r16', 'qf', 'sf', 'final']; // progression ladder (3rd-place excluded)
-const BONUS_FOR = { r32: 'r32', r16: 'r16', qf: 'qf', sf: 'sf', final: 'final' };
 
 export function compute(matches) {
   const byId = new Map(TEAMS.map((t) => [t.id, { ...t,
@@ -52,25 +51,32 @@ export function compute(matches) {
         if (self.score > opp.score) { t.wins += 1; t.matchPoints += SCORING.matchPoints.win; }
         else if (self.score < opp.score) { t.losses += 1; t.matchPoints += SCORING.matchPoints.loss; }
         else { t.draws += 1; t.matchPoints += SCORING.matchPoints.draw; }
-        // Champion: won the final.
-        if (m.round === 'final' && self.winner) { t.champion = true; }
+        // Champion: won the final (only once the match is officially completed).
+        if (m.round === 'final' && self.winner && m.completed) { t.champion = true; }
       }
     }
   }
 
-  // Apply reached-round sets + bonuses.
-  for (const round of KO_ORDER) {
-    for (const id of reachedKO[round]) {
-      const t = byId.get(id);
-      if (t) { t.reached.add(round); t.bonusPoints += SCORING.roundBonus[BONUS_FOR[round]]; }
-    }
-  }
+  // Apply round bonuses cumulatively from the DEEPEST round a team reached.
+  // Working from the deepest stage down (rather than per-appearance) means a
+  // single missing/mis-binned earlier fixture can't silently drop a bonus.
   for (const t of byId.values()) {
+    let deepest = -1;
+    KO_ORDER.forEach((round, idx) => { if (reachedKO[round].has(t.id)) deepest = idx; });
+    for (let i = 0; i <= deepest; i++) {
+      const round = KO_ORDER[i];
+      t.reached.add(round);
+      t.bonusPoints += SCORING.roundBonus[round];
+    }
     if (t.champion) t.bonusPoints += SCORING.roundBonus.champion;
   }
 
-  // Has the knockout bracket been drawn yet? (any real team in an R32 fixture)
+  // bracketDrawn = any real team has entered R32. bracketFull = ALL 32 qualifiers
+  // are known (16 fixtures fully populated). We only call group teams "out" once
+  // the field is FULL — otherwise a qualified team whose R32 slot is still a
+  // placeholder during the rolling group→KO transition would look eliminated.
   const bracketDrawn = reachedKO.r32.size > 0;
+  const bracketFull = reachedKO.r32.size >= 32;
 
   // Per-team derived fields.
   const teams = [];
@@ -78,7 +84,7 @@ export function compute(matches) {
     const gd = t.gf - t.ga;
     const total = t.matchPoints + t.bonusPoints;
     const furthest = furthestRound(t.reached, t.champion);
-    const status = teamStatus(t, matches, reachedKO, bracketDrawn);
+    const status = teamStatus(t, matches, reachedKO, bracketFull);
     teams.push({
       id: t.id, name: t.name, abbr: t.abbr, group: t.group, owner: t.owner, flag: t.flag,
       played: t.played, wins: t.wins, draws: t.draws, losses: t.losses,
@@ -142,8 +148,8 @@ function furthestRound(reached, champion) {
   return best;
 }
 
-// A team is OUT if it lost a knockout tie, or the bracket is drawn and it didn't make it.
-function teamStatus(t, matches, reachedKO, bracketDrawn) {
+// A team is OUT if it lost a knockout tie, or the full R32 field is set and it didn't make it.
+function teamStatus(t, matches, reachedKO, bracketFull) {
   if (t.champion) return 'champion';
   // Lost a knockout match (post, not winner) → eliminated.
   for (const m of matches) {
@@ -155,10 +161,10 @@ function teamStatus(t, matches, reachedKO, bracketDrawn) {
       }
     }
   }
-  // Group team that didn't make a drawn bracket → out.
+  // Group team that didn't make the (fully-populated) bracket → out.
   const inKO = reachedKO.r32.has(t.id) || reachedKO.r16.has(t.id) || reachedKO.qf.has(t.id) ||
                reachedKO.sf.has(t.id) || reachedKO.final.has(t.id);
-  if (bracketDrawn && !inKO) return 'out';
+  if (bracketFull && !inKO) return 'out';
   return 'alive';
 }
 

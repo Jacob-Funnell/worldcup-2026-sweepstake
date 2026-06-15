@@ -10,9 +10,11 @@ import * as UI from './ui.mjs';
 const $ = (s) => document.querySelector(s);
 const app = $('#app');
 
+const safeColour = (c) => (/^#[0-9a-f]{3,8}$/i.test(c) ? c : '#888');
 function decorate(p) {
-  // Attach person meta (colour/emoji/img) onto the computed groupings.
-  const tag = (g) => Object.assign(g, PEOPLE[g.key]);
+  // Attach person meta (colour/emoji/img) onto the computed groupings, and
+  // validate colours once here so every downstream style interpolation is safe.
+  const tag = (g) => { Object.assign(g, PEOPLE[g.key]); g.colour = safeColour(g.colour); };
   p.leaderboard.forEach(tag); p.goldenBoot.forEach(tag); p.groupings.forEach(tag);
   return p;
 }
@@ -42,6 +44,14 @@ function setStatus(state, text) {
   const el = $('#live');
   el.className = 'live ' + state;
   el.querySelector('.live__txt').textContent = text;
+}
+
+const londonToday = () => new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/London' }).format(new Date());
+// Movement is "since yesterday morning" — only valid if the snapshot is recent.
+function snapshotFresh(dateStr) {
+  if (!dateStr) return false;
+  const ms = new Date(londonToday() + 'T12:00:00Z') - new Date(dateStr + 'T12:00:00Z');
+  return ms <= 36 * 3600 * 1000; // today or yesterday
 }
 
 function timeAgo(iso) {
@@ -114,8 +124,15 @@ async function init() {
   const baked = await loadBaked();
   try {
     const live = await loadLive();
-    // graft the overnight movement + date context from the baked snapshot
-    if (baked) { live.movement = baked.movement; live.dateLondon = baked.dateLondon; }
+    // Graft the overnight movement from the baked snapshot — but only if it's
+    // recent, so we never present days-old deltas as "overnight".
+    if (baked && snapshotFresh(baked.dateLondon)) {
+      live.movement = baked.movement;
+      live.dateLondon = baked.dateLondon;
+    } else {
+      live.movement = { since: null, groupings: {}, topMover: null, teamDeltas: [] };
+      live.dateLondon = baked?.dateLondon;
+    }
     paint(live);
     setStatus('', `Live · scores ${timeAgo(live.fetchedAt)}`);
   } catch (e) {

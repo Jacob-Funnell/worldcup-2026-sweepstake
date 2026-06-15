@@ -7,7 +7,7 @@
 export const PEOPLE = {
   lewis:   { key: 'lewis',   character: 'Lewis T. Duck',     person: 'Jacob', colour: '#2f9e57', emoji: '🦆' },
   arnold:  { key: 'arnold',  character: 'Arnold the Elephant', person: 'Pete', colour: '#2f6fd0', emoji: '🐘' },
-  mildred: { key: 'mildred', character: 'Captain Mildred',   person: 'Matt',  colour: '#d23b46', emoji: '🧭' },
+  mildred: { key: 'mildred', character: 'Captain Mildred',   person: 'Matt',  colour: '#d23b46', emoji: '⚓' },
 };
 export const PEOPLE_ORDER = ['lewis', 'arnold', 'mildred'];
 

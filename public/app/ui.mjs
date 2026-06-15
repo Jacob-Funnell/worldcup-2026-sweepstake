@@ -7,8 +7,8 @@ const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<
 const ord = (n) => ['🥇', '🥈', '🥉'][n - 1] || `${n}th`;
 
 function avatar(g, big = false) {
-  const img = g.img ? `<img src="${esc(g.img)}" alt="${esc(g.character)}" onerror="this.style.display='none'">` : '';
-  return `<div class="avatar" style="--c:${g.colour}">${img || g.emoji}</div>`;
+  const img = g.img ? `<img src="${esc(g.img)}" alt="" onerror="this.style.display='none'">` : '';
+  return `<div class="avatar" aria-hidden="true" style="--c:${g.colour}">${img || g.emoji}</div>`;
 }
 function flag(url, cls = 'flag') {
   return url ? `<img class="${cls}" src="${esc(url)}" alt="" loading="lazy">` : `<span class="${cls}" style="background:#dfe3ee"></span>`;
@@ -75,7 +75,7 @@ export function renderBoard(p) {
 export function renderMovers(p) {
   const mvt = p.movement;
   if (!mvt || !mvt.since) {
-    return `<div class="card movers"><div class="movers__empty">📸 This is the first morning snapshot — overnight movement will show here from tomorrow. (Live scores above are always current.)</div></div>`;
+    return `<div class="card movers"><div class="movers__empty">📸 No overnight movement to show yet — it lands here after the next morning snapshot. (Live scores above are always current.)</div></div>`;
   }
   const rows = (mvt.teamDeltas || []).map((t) => {
     const col = colourFor(p, t.owner);

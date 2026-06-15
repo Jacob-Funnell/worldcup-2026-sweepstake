@@ -2,7 +2,7 @@
 import { createServer } from 'node:http';
 import { readFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
-import { dirname, join, extname, normalize } from 'node:path';
+import { dirname, join, extname, normalize, sep } from 'node:path';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..', 'public');
 const PORT = process.env.PORT || 4321;
@@ -15,7 +15,7 @@ createServer(async (req, res) => {
     let p = decodeURIComponent(req.url.split('?')[0]);
     if (p === '/') p = '/index.html';
     const file = normalize(join(root, p));
-    if (!file.startsWith(root)) { res.writeHead(403); return res.end('no'); }
+    if (file !== root && !file.startsWith(root + sep)) { res.writeHead(403); return res.end('no'); }
     const body = await readFile(file);
     res.writeHead(200, { 'Content-Type': TYPES[extname(file)] || 'application/octet-stream' });
     res.end(body);
