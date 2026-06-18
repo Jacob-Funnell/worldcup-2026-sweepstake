@@ -1,0 +1,366 @@
+{
+  "date": "2026-06-18",
+  "generatedAt": "2026-06-18T08:33:01.715Z",
+  "matchesPlayed": 24,
+  "groupings": {
+    "lewis": {
+      "total": 23,
+      "gf": 23,
+      "gd": 5,
+      "rank": 1,
+      "bootRank": 2
+    },
+    "arnold": {
+      "total": 21,
+      "gf": 30,
+      "gd": -4,
+      "rank": 2,
+      "bootRank": 1
+    },
+    "mildred": {
+      "total": 19,
+      "gf": 22,
+      "gd": -1,
+      "rank": 3,
+      "bootRank": 3
+    }
+  },
+  "teams": {
+    "164": {
+      "total": 1,
+      "gf": 0,
+      "status": "alive",
+      "name": "Spain",
+      "owner": "arnold"
+    },
+    "202": {
+      "total": 3,
+      "gf": 3,
+      "status": "alive",
+      "name": "Argentina",
+      "owner": "lewis"
+    },
+    "203": {
+      "total": 3,
+      "gf": 2,
+      "status": "alive",
+      "name": "Mexico",
+      "owner": "lewis"
+    },
+    "205": {
+      "total": 1,
+      "gf": 1,
+      "status": "alive",
+      "name": "Brazil",
+      "owner": "mildred"
+    },
+    "206": {
+      "total": 1,
+      "gf": 1,
+      "status": "alive",
+      "name": "Canada",
+      "owner": "mildred"
+    },
+    "208": {
+      "total": 3,
+      "gf": 3,
+      "status": "alive",
+      "name": "Colombia",
+      "owner": "arnold"
+    },
+    "209": {
+      "total": 0,
+      "gf": 0,
+      "status": "alive",
+      "name": "Ecuador",
+      "owner": "lewis"
+    },
+    "210": {
+      "total": 0,
+      "gf": 1,
+      "status": "alive",
+      "name": "Paraguay",
+      "owner": "arnold"
+    },
+    "212": {
+      "total": 1,
+      "gf": 1,
+      "status": "alive",
+      "name": "Uruguay",
+      "owner": "arnold"
+    },
+    "448": {
+      "total": 3,
+      "gf": 4,
+      "status": "alive",
+      "name": "England",
+      "owner": "arnold"
+    },
+    "449": {
+      "total": 1,
+      "gf": 2,
+      "status": "alive",
+      "name": "Netherlands",
+      "owner": "lewis"
+    },
+    "450": {
+      "total": 0,
+      "gf": 1,
+      "status": "alive",
+      "name": "Czechia",
+      "owner": "arnold"
+    },
+    "451": {
+      "total": 3,
+      "gf": 2,
+      "status": "alive",
+      "name": "South Korea",
+      "owner": "arnold"
+    },
+    "452": {
+      "total": 1,
+      "gf": 1,
+      "status": "alive",
+      "name": "Bosnia-Herzegovina",
+      "owner": "lewis"
+    },
+    "459": {
+      "total": 1,
+      "gf": 1,
+      "status": "alive",
+      "name": "Belgium",
+      "owner": "lewis"
+    },
+    "464": {
+      "total": 3,
+      "gf": 4,
+      "status": "alive",
+      "name": "Norway",
+      "owner": "mildred"
+    },
+    "465": {
+      "total": 0,
+      "gf": 0,
+      "status": "alive",
+      "name": "Türkiye",
+      "owner": "lewis"
+    },
+    "466": {
+      "total": 3,
+      "gf": 5,
+      "status": "alive",
+      "name": "Sweden",
+      "owner": "lewis"
+    },
+    "467": {
+      "total": 0,
+      "gf": 0,
+      "status": "alive",
+      "name": "South Africa",
+      "owner": "mildred"
+    },
+    "469": {
+      "total": 1,
+      "gf": 2,
+      "status": "alive",
+      "name": "Iran",
+      "owner": "arnold"
+    },
+    "474": {
+      "total": 3,
+      "gf": 3,
+      "status": "alive",
+      "name": "Austria",
+      "owner": "arnold"
+    },
+    "475": {
+      "total": 1,
+      "gf": 1,
+      "status": "alive",
+      "name": "Switzerland",
+      "owner": "arnold"
+    },
+    "477": {
+      "total": 0,
+      "gf": 2,
+      "status": "alive",
+      "name": "Croatia",
+      "owner": "mildred"
+    },
+    "478": {
+      "total": 3,
+      "gf": 3,
+      "status": "alive",
+      "name": "France",
+      "owner": "lewis"
+    },
+    "481": {
+      "total": 3,
+      "gf": 7,
+      "status": "alive",
+      "name": "Germany",
+      "owner": "arnold"
+    },
+    "482": {
+      "total": 1,
+      "gf": 1,
+      "status": "alive",
+      "name": "Portugal",
+      "owner": "mildred"
+    },
+    "580": {
+      "total": 3,
+      "gf": 1,
+      "status": "alive",
+      "name": "Scotland",
+      "owner": "lewis"
+    },
+    "624": {
+      "total": 0,
+      "gf": 0,
+      "status": "alive",
+      "name": "Algeria",
+      "owner": "mildred"
+    },
+    "627": {
+      "total": 1,
+      "gf": 2,
+      "status": "alive",
+      "name": "Japan",
+      "owner": "mildred"
+    },
+    "628": {
+      "total": 3,
+      "gf": 2,
+      "status": "alive",
+      "name": "Australia",
+      "owner": "mildred"
+    },
+    "654": {
+      "total": 0,
+      "gf": 1,
+      "status": "alive",
+      "name": "Senegal",
+      "owner": "lewis"
+    },
+    "655": {
+      "total": 1,
+      "gf": 1,
+      "status": "alive",
+      "name": "Saudi Arabia",
+      "owner": "lewis"
+    },
+    "659": {
+      "total": 0,
+      "gf": 1,
+      "status": "alive",
+      "name": "Tunisia",
+      "owner": "arnold"
+    },
+    "660": {
+      "total": 3,
+      "gf": 4,
+      "status": "alive",
+      "name": "United States",
+      "owner": "mildred"
+    },
+    "2570": {
+      "total": 0,
+      "gf": 1,
+      "status": "alive",
+      "name": "Uzbekistan",
+      "owner": "lewis"
+    },
+    "2597": {
+      "total": 1,
+      "gf": 0,
+      "status": "alive",
+      "name": "Cape Verde",
+      "owner": "mildred"
+    },
+    "2620": {
+      "total": 1,
+      "gf": 1,
+      "status": "alive",
+      "name": "Egypt",
+      "owner": "mildred"
+    },
+    "2654": {
+      "total": 0,
+      "gf": 0,
+      "status": "alive",
+      "name": "Haiti",
+      "owner": "mildred"
+    },
+    "2659": {
+      "total": 0,
+      "gf": 0,
+      "status": "alive",
+      "name": "Panama",
+      "owner": "lewis"
+    },
+    "2666": {
+      "total": 1,
+      "gf": 2,
+      "status": "alive",
+      "name": "New Zealand",
+      "owner": "mildred"
+    },
+    "2850": {
+      "total": 1,
+      "gf": 1,
+      "status": "alive",
+      "name": "Congo DR",
+      "owner": "arnold"
+    },
+    "2869": {
+      "total": 1,
+      "gf": 1,
+      "status": "alive",
+      "name": "Morocco",
+      "owner": "arnold"
+    },
+    "2917": {
+      "total": 0,
+      "gf": 1,
+      "status": "alive",
+      "name": "Jordan",
+      "owner": "mildred"
+    },
+    "4375": {
+      "total": 0,
+      "gf": 1,
+      "status": "alive",
+      "name": "Iraq",
+      "owner": "arnold"
+    },
+    "4398": {
+      "total": 1,
+      "gf": 1,
+      "status": "alive",
+      "name": "Qatar",
+      "owner": "lewis"
+    },
+    "4469": {
+      "total": 3,
+      "gf": 1,
+      "status": "alive",
+      "name": "Ghana",
+      "owner": "lewis"
+    },
+    "4789": {
+      "total": 3,
+      "gf": 1,
+      "status": "alive",
+      "name": "Ivory Coast",
+      "owner": "mildred"
+    },
+    "11678": {
+      "total": 0,
+      "gf": 1,
+      "status": "alive",
+      "name": "Curaçao",
+      "owner": "arnold"
+    }
+  }
+}
