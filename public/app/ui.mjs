@@ -133,7 +133,6 @@ export function renderSquad(g) {
     let tag = '<span class="tag alive">In</span>';
     if (t.status === 'champion') tag = '<span class="tag champion">🏆 Champs</span>';
     else if (t.status === 'through') tag = '<span class="tag through">Through ✅</span>';
-    else if (t.status === 'eliminated') tag = '<span class="tag out">Drop zone</span>';
     else if (t.status === 'out') tag = '<span class="tag out">Out</span>';
     const best = g.best && g.best.id === t.id ? '<span class="tag best">★ Top</span>' : '';
     const rec = t.played ? `${t.wins}W ${t.draws}D ${t.losses}L · ⚽${t.gf}-${t.ga}` : 'yet to play';

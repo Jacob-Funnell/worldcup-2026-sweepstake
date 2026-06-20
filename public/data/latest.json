@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-20T10:12:29.754Z",
+  "generatedAt": "2026-06-20T10:40:40.471Z",
   "bracketDrawn": true,
   "tournamentOver": false,
   "leaderboard": [
@@ -18,8 +18,8 @@
       "wins": 7,
       "draws": 8,
       "losses": 7,
-      "alive": 10,
-      "out": 6,
+      "alive": 16,
+      "out": 0,
       "through": 1,
       "champions": 0,
       "gd": 5,
@@ -378,7 +378,7 @@
           "furthest": "group",
           "furthestLabel": "Group stage",
           "champion": false,
-          "status": "eliminated",
+          "status": "alive",
           "matches": [
             {
               "oppName": "Belgium",
@@ -450,7 +450,7 @@
           "furthest": "group",
           "furthestLabel": "Group stage",
           "champion": false,
-          "status": "eliminated",
+          "status": "alive",
           "matches": [
             {
               "oppName": "Spain",
@@ -486,7 +486,7 @@
           "furthest": "group",
           "furthestLabel": "Group stage",
           "champion": false,
-          "status": "eliminated",
+          "status": "alive",
           "matches": [
             {
               "oppName": "Mexico",
@@ -533,7 +533,7 @@
           "furthest": "group",
           "furthestLabel": "Group stage",
           "champion": false,
-          "status": "eliminated",
+          "status": "alive",
           "matches": [
             {
               "oppName": "England",
@@ -605,7 +605,7 @@
           "furthest": "group",
           "furthestLabel": "Group stage",
           "champion": false,
-          "status": "eliminated",
+          "status": "alive",
           "matches": [
             {
               "oppName": "Argentina",
@@ -641,7 +641,7 @@
           "furthest": "group",
           "furthestLabel": "Group stage",
           "champion": false,
-          "status": "eliminated",
+          "status": "alive",
           "matches": [
             {
               "oppName": "Scotland",
@@ -718,53 +718,7 @@
           "r32": "2026-06-20T03:00Z"
         }
       },
-      "flop": {
-        "id": "2654",
-        "name": "Haiti",
-        "abbr": "HAI",
-        "group": "C",
-        "owner": "mildred",
-        "flag": "https://a.espncdn.com/i/teamlogos/countries/500/hai.png",
-        "played": 2,
-        "wins": 0,
-        "draws": 0,
-        "losses": 2,
-        "gf": 0,
-        "ga": 4,
-        "gd": -4,
-        "matchPoints": 0,
-        "bonusPoints": 0,
-        "total": 0,
-        "furthest": "group",
-        "furthestLabel": "Group stage",
-        "champion": false,
-        "status": "eliminated",
-        "matches": [
-          {
-            "oppName": "Scotland",
-            "oppFlag": "https://a.espncdn.com/i/teamlogos/countries/500/sco.png",
-            "round": "group",
-            "gf": 0,
-            "ga": 1,
-            "state": "post",
-            "detail": "FT",
-            "date": "2026-06-14T01:00Z",
-            "result": "L"
-          },
-          {
-            "oppName": "Brazil",
-            "oppFlag": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
-            "round": "group",
-            "gf": 0,
-            "ga": 3,
-            "state": "post",
-            "detail": "FT",
-            "date": "2026-06-20T00:30Z",
-            "result": "L"
-          }
-        ],
-        "reachedDates": {}
-      },
+      "flop": null,
       "rank": 1,
       "bootRank": 2
     },
@@ -783,8 +737,8 @@
       "wins": 8,
       "draws": 7,
       "losses": 6,
-      "alive": 13,
-      "out": 3,
+      "alive": 16,
+      "out": 0,
       "through": 0,
       "champions": 0,
       "gd": 0,
@@ -1332,7 +1286,7 @@
           "furthest": "group",
           "furthestLabel": "Group stage",
           "champion": false,
-          "status": "eliminated",
+          "status": "alive",
           "matches": [
             {
               "oppName": "Norway",
@@ -1368,7 +1322,7 @@
           "furthest": "group",
           "furthestLabel": "Group stage",
           "champion": false,
-          "status": "eliminated",
+          "status": "alive",
           "matches": [
             {
               "oppName": "Sweden",
@@ -1404,7 +1358,7 @@
           "furthest": "group",
           "furthestLabel": "Group stage",
           "champion": false,
-          "status": "eliminated",
+          "status": "alive",
           "matches": [
             {
               "oppName": "Germany",
@@ -1468,42 +1422,7 @@
         ],
         "reachedDates": {}
       },
-      "flop": {
-        "id": "11678",
-        "name": "Curaçao",
-        "abbr": "CUW",
-        "group": "E",
-        "owner": "arnold",
-        "flag": "https://a.espncdn.com/i/teamlogos/soccer/500/11678.png",
-        "played": 1,
-        "wins": 0,
-        "draws": 0,
-        "losses": 1,
-        "gf": 1,
-        "ga": 7,
-        "gd": -6,
-        "matchPoints": 0,
-        "bonusPoints": 0,
-        "total": 0,
-        "furthest": "group",
-        "furthestLabel": "Group stage",
-        "champion": false,
-        "status": "eliminated",
-        "matches": [
-          {
-            "oppName": "Germany",
-            "oppFlag": "https://a.espncdn.com/i/teamlogos/countries/500/ger.png",
-            "round": "group",
-            "gf": 1,
-            "ga": 7,
-            "state": "post",
-            "detail": "FT",
-            "date": "2026-06-14T17:00Z",
-            "result": "L"
-          }
-        ],
-        "reachedDates": {}
-      },
+      "flop": null,
       "rank": 2,
       "bootRank": 1
     },
@@ -1522,8 +1441,8 @@
       "wins": 7,
       "draws": 5,
       "losses": 9,
-      "alive": 13,
-      "out": 3,
+      "alive": 16,
+      "out": 0,
       "through": 1,
       "champions": 0,
       "gd": -5,
@@ -1943,7 +1862,7 @@
           "furthest": "group",
           "furthestLabel": "Group stage",
           "champion": false,
-          "status": "eliminated",
+          "status": "alive",
           "matches": [
             {
               "oppName": "Switzerland",
@@ -2098,7 +2017,7 @@
           "furthest": "group",
           "furthestLabel": "Group stage",
           "champion": false,
-          "status": "eliminated",
+          "status": "alive",
           "matches": [
             {
               "oppName": "Colombia",
@@ -2134,7 +2053,7 @@
           "furthest": "group",
           "furthestLabel": "Group stage",
           "champion": false,
-          "status": "eliminated",
+          "status": "alive",
           "matches": [
             {
               "oppName": "Australia",
@@ -2211,53 +2130,7 @@
           "r32": "2026-06-19T01:00Z"
         }
       },
-      "flop": {
-        "id": "465",
-        "name": "Türkiye",
-        "abbr": "TUR",
-        "group": "D",
-        "owner": "lewis",
-        "flag": "https://a.espncdn.com/i/teamlogos/countries/500/tur.png",
-        "played": 2,
-        "wins": 0,
-        "draws": 0,
-        "losses": 2,
-        "gf": 0,
-        "ga": 3,
-        "gd": -3,
-        "matchPoints": 0,
-        "bonusPoints": 0,
-        "total": 0,
-        "furthest": "group",
-        "furthestLabel": "Group stage",
-        "champion": false,
-        "status": "eliminated",
-        "matches": [
-          {
-            "oppName": "Australia",
-            "oppFlag": "https://a.espncdn.com/i/teamlogos/countries/500/aus.png",
-            "round": "group",
-            "gf": 0,
-            "ga": 2,
-            "state": "post",
-            "detail": "FT",
-            "date": "2026-06-14T04:00Z",
-            "result": "L"
-          },
-          {
-            "oppName": "Paraguay",
-            "oppFlag": "https://a.espncdn.com/i/teamlogos/countries/500/par.png",
-            "round": "group",
-            "gf": 0,
-            "ga": 1,
-            "state": "post",
-            "detail": "FT",
-            "date": "2026-06-20T03:00Z",
-            "result": "L"
-          }
-        ],
-        "reachedDates": {}
-      },
+      "flop": null,
       "rank": 3,
       "bootRank": 3
     }
@@ -2278,8 +2151,8 @@
       "wins": 8,
       "draws": 7,
       "losses": 6,
-      "alive": 13,
-      "out": 3,
+      "alive": 16,
+      "out": 0,
       "through": 0,
       "champions": 0,
       "gd": 0,
@@ -2827,7 +2700,7 @@
           "furthest": "group",
           "furthestLabel": "Group stage",
           "champion": false,
-          "status": "eliminated",
+          "status": "alive",
           "matches": [
             {
               "oppName": "Norway",
@@ -2863,7 +2736,7 @@
           "furthest": "group",
           "furthestLabel": "Group stage",
           "champion": false,
-          "status": "eliminated",
+          "status": "alive",
           "matches": [
             {
               "oppName": "Sweden",
@@ -2899,7 +2772,7 @@
           "furthest": "group",
           "furthestLabel": "Group stage",
           "champion": false,
-          "status": "eliminated",
+          "status": "alive",
           "matches": [
             {
               "oppName": "Germany",
@@ -2963,42 +2836,7 @@
         ],
         "reachedDates": {}
       },
-      "flop": {
-        "id": "11678",
-        "name": "Curaçao",
-        "abbr": "CUW",
-        "group": "E",
-        "owner": "arnold",
-        "flag": "https://a.espncdn.com/i/teamlogos/soccer/500/11678.png",
-        "played": 1,
-        "wins": 0,
-        "draws": 0,
-        "losses": 1,
-        "gf": 1,
-        "ga": 7,
-        "gd": -6,
-        "matchPoints": 0,
-        "bonusPoints": 0,
-        "total": 0,
-        "furthest": "group",
-        "furthestLabel": "Group stage",
-        "champion": false,
-        "status": "eliminated",
-        "matches": [
-          {
-            "oppName": "Germany",
-            "oppFlag": "https://a.espncdn.com/i/teamlogos/countries/500/ger.png",
-            "round": "group",
-            "gf": 1,
-            "ga": 7,
-            "state": "post",
-            "detail": "FT",
-            "date": "2026-06-14T17:00Z",
-            "result": "L"
-          }
-        ],
-        "reachedDates": {}
-      },
+      "flop": null,
       "rank": 2,
       "bootRank": 1
     },
@@ -3017,8 +2855,8 @@
       "wins": 7,
       "draws": 8,
       "losses": 7,
-      "alive": 10,
-      "out": 6,
+      "alive": 16,
+      "out": 0,
       "through": 1,
       "champions": 0,
       "gd": 5,
@@ -3377,7 +3215,7 @@
           "furthest": "group",
           "furthestLabel": "Group stage",
           "champion": false,
-          "status": "eliminated",
+          "status": "alive",
           "matches": [
             {
               "oppName": "Belgium",
@@ -3449,7 +3287,7 @@
           "furthest": "group",
           "furthestLabel": "Group stage",
           "champion": false,
-          "status": "eliminated",
+          "status": "alive",
           "matches": [
             {
               "oppName": "Spain",
@@ -3485,7 +3323,7 @@
           "furthest": "group",
           "furthestLabel": "Group stage",
           "champion": false,
-          "status": "eliminated",
+          "status": "alive",
           "matches": [
             {
               "oppName": "Mexico",
@@ -3532,7 +3370,7 @@
           "furthest": "group",
           "furthestLabel": "Group stage",
           "champion": false,
-          "status": "eliminated",
+          "status": "alive",
           "matches": [
             {
               "oppName": "England",
@@ -3604,7 +3442,7 @@
           "furthest": "group",
           "furthestLabel": "Group stage",
           "champion": false,
-          "status": "eliminated",
+          "status": "alive",
           "matches": [
             {
               "oppName": "Argentina",
@@ -3640,7 +3478,7 @@
           "furthest": "group",
           "furthestLabel": "Group stage",
           "champion": false,
-          "status": "eliminated",
+          "status": "alive",
           "matches": [
             {
               "oppName": "Scotland",
@@ -3717,53 +3555,7 @@
           "r32": "2026-06-20T03:00Z"
         }
       },
-      "flop": {
-        "id": "2654",
-        "name": "Haiti",
-        "abbr": "HAI",
-        "group": "C",
-        "owner": "mildred",
-        "flag": "https://a.espncdn.com/i/teamlogos/countries/500/hai.png",
-        "played": 2,
-        "wins": 0,
-        "draws": 0,
-        "losses": 2,
-        "gf": 0,
-        "ga": 4,
-        "gd": -4,
-        "matchPoints": 0,
-        "bonusPoints": 0,
-        "total": 0,
-        "furthest": "group",
-        "furthestLabel": "Group stage",
-        "champion": false,
-        "status": "eliminated",
-        "matches": [
-          {
-            "oppName": "Scotland",
-            "oppFlag": "https://a.espncdn.com/i/teamlogos/countries/500/sco.png",
-            "round": "group",
-            "gf": 0,
-            "ga": 1,
-            "state": "post",
-            "detail": "FT",
-            "date": "2026-06-14T01:00Z",
-            "result": "L"
-          },
-          {
-            "oppName": "Brazil",
-            "oppFlag": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
-            "round": "group",
-            "gf": 0,
-            "ga": 3,
-            "state": "post",
-            "detail": "FT",
-            "date": "2026-06-20T00:30Z",
-            "result": "L"
-          }
-        ],
-        "reachedDates": {}
-      },
+      "flop": null,
       "rank": 1,
       "bootRank": 2
     },
@@ -3782,8 +3574,8 @@
       "wins": 7,
       "draws": 5,
       "losses": 9,
-      "alive": 13,
-      "out": 3,
+      "alive": 16,
+      "out": 0,
       "through": 1,
       "champions": 0,
       "gd": -5,
@@ -4203,7 +3995,7 @@
           "furthest": "group",
           "furthestLabel": "Group stage",
           "champion": false,
-          "status": "eliminated",
+          "status": "alive",
           "matches": [
             {
               "oppName": "Switzerland",
@@ -4358,7 +4150,7 @@
           "furthest": "group",
           "furthestLabel": "Group stage",
           "champion": false,
-          "status": "eliminated",
+          "status": "alive",
           "matches": [
             {
               "oppName": "Colombia",
@@ -4394,7 +4186,7 @@
           "furthest": "group",
           "furthestLabel": "Group stage",
           "champion": false,
-          "status": "eliminated",
+          "status": "alive",
           "matches": [
             {
               "oppName": "Australia",
@@ -4471,53 +4263,7 @@
           "r32": "2026-06-19T01:00Z"
         }
       },
-      "flop": {
-        "id": "465",
-        "name": "Türkiye",
-        "abbr": "TUR",
-        "group": "D",
-        "owner": "lewis",
-        "flag": "https://a.espncdn.com/i/teamlogos/countries/500/tur.png",
-        "played": 2,
-        "wins": 0,
-        "draws": 0,
-        "losses": 2,
-        "gf": 0,
-        "ga": 3,
-        "gd": -3,
-        "matchPoints": 0,
-        "bonusPoints": 0,
-        "total": 0,
-        "furthest": "group",
-        "furthestLabel": "Group stage",
-        "champion": false,
-        "status": "eliminated",
-        "matches": [
-          {
-            "oppName": "Australia",
-            "oppFlag": "https://a.espncdn.com/i/teamlogos/countries/500/aus.png",
-            "round": "group",
-            "gf": 0,
-            "ga": 2,
-            "state": "post",
-            "detail": "FT",
-            "date": "2026-06-14T04:00Z",
-            "result": "L"
-          },
-          {
-            "oppName": "Paraguay",
-            "oppFlag": "https://a.espncdn.com/i/teamlogos/countries/500/par.png",
-            "round": "group",
-            "gf": 0,
-            "ga": 1,
-            "state": "post",
-            "detail": "FT",
-            "date": "2026-06-20T03:00Z",
-            "result": "L"
-          }
-        ],
-        "reachedDates": {}
-      },
+      "flop": null,
       "rank": 3,
       "bootRank": 3
     }
@@ -4538,8 +4284,8 @@
       "wins": 7,
       "draws": 5,
       "losses": 9,
-      "alive": 13,
-      "out": 3,
+      "alive": 16,
+      "out": 0,
       "through": 1,
       "champions": 0,
       "gd": -5,
@@ -4959,7 +4705,7 @@
           "furthest": "group",
           "furthestLabel": "Group stage",
           "champion": false,
-          "status": "eliminated",
+          "status": "alive",
           "matches": [
             {
               "oppName": "Switzerland",
@@ -5114,7 +4860,7 @@
           "furthest": "group",
           "furthestLabel": "Group stage",
           "champion": false,
-          "status": "eliminated",
+          "status": "alive",
           "matches": [
             {
               "oppName": "Colombia",
@@ -5150,7 +4896,7 @@
           "furthest": "group",
           "furthestLabel": "Group stage",
           "champion": false,
-          "status": "eliminated",
+          "status": "alive",
           "matches": [
             {
               "oppName": "Australia",
@@ -5227,53 +4973,7 @@
           "r32": "2026-06-19T01:00Z"
         }
       },
-      "flop": {
-        "id": "465",
-        "name": "Türkiye",
-        "abbr": "TUR",
-        "group": "D",
-        "owner": "lewis",
-        "flag": "https://a.espncdn.com/i/teamlogos/countries/500/tur.png",
-        "played": 2,
-        "wins": 0,
-        "draws": 0,
-        "losses": 2,
-        "gf": 0,
-        "ga": 3,
-        "gd": -3,
-        "matchPoints": 0,
-        "bonusPoints": 0,
-        "total": 0,
-        "furthest": "group",
-        "furthestLabel": "Group stage",
-        "champion": false,
-        "status": "eliminated",
-        "matches": [
-          {
-            "oppName": "Australia",
-            "oppFlag": "https://a.espncdn.com/i/teamlogos/countries/500/aus.png",
-            "round": "group",
-            "gf": 0,
-            "ga": 2,
-            "state": "post",
-            "detail": "FT",
-            "date": "2026-06-14T04:00Z",
-            "result": "L"
-          },
-          {
-            "oppName": "Paraguay",
-            "oppFlag": "https://a.espncdn.com/i/teamlogos/countries/500/par.png",
-            "round": "group",
-            "gf": 0,
-            "ga": 1,
-            "state": "post",
-            "detail": "FT",
-            "date": "2026-06-20T03:00Z",
-            "result": "L"
-          }
-        ],
-        "reachedDates": {}
-      },
+      "flop": null,
       "rank": 3,
       "bootRank": 3
     },
@@ -5292,8 +4992,8 @@
       "wins": 8,
       "draws": 7,
       "losses": 6,
-      "alive": 13,
-      "out": 3,
+      "alive": 16,
+      "out": 0,
       "through": 0,
       "champions": 0,
       "gd": 0,
@@ -5841,7 +5541,7 @@
           "furthest": "group",
           "furthestLabel": "Group stage",
           "champion": false,
-          "status": "eliminated",
+          "status": "alive",
           "matches": [
             {
               "oppName": "Norway",
@@ -5877,7 +5577,7 @@
           "furthest": "group",
           "furthestLabel": "Group stage",
           "champion": false,
-          "status": "eliminated",
+          "status": "alive",
           "matches": [
             {
               "oppName": "Sweden",
@@ -5913,7 +5613,7 @@
           "furthest": "group",
           "furthestLabel": "Group stage",
           "champion": false,
-          "status": "eliminated",
+          "status": "alive",
           "matches": [
             {
               "oppName": "Germany",
@@ -5977,42 +5677,7 @@
         ],
         "reachedDates": {}
       },
-      "flop": {
-        "id": "11678",
-        "name": "Curaçao",
-        "abbr": "CUW",
-        "group": "E",
-        "owner": "arnold",
-        "flag": "https://a.espncdn.com/i/teamlogos/soccer/500/11678.png",
-        "played": 1,
-        "wins": 0,
-        "draws": 0,
-        "losses": 1,
-        "gf": 1,
-        "ga": 7,
-        "gd": -6,
-        "matchPoints": 0,
-        "bonusPoints": 0,
-        "total": 0,
-        "furthest": "group",
-        "furthestLabel": "Group stage",
-        "champion": false,
-        "status": "eliminated",
-        "matches": [
-          {
-            "oppName": "Germany",
-            "oppFlag": "https://a.espncdn.com/i/teamlogos/countries/500/ger.png",
-            "round": "group",
-            "gf": 1,
-            "ga": 7,
-            "state": "post",
-            "detail": "FT",
-            "date": "2026-06-14T17:00Z",
-            "result": "L"
-          }
-        ],
-        "reachedDates": {}
-      },
+      "flop": null,
       "rank": 2,
       "bootRank": 1
     },
@@ -6031,8 +5696,8 @@
       "wins": 7,
       "draws": 8,
       "losses": 7,
-      "alive": 10,
-      "out": 6,
+      "alive": 16,
+      "out": 0,
       "through": 1,
       "champions": 0,
       "gd": 5,
@@ -6391,7 +6056,7 @@
           "furthest": "group",
           "furthestLabel": "Group stage",
           "champion": false,
-          "status": "eliminated",
+          "status": "alive",
           "matches": [
             {
               "oppName": "Belgium",
@@ -6463,7 +6128,7 @@
           "furthest": "group",
           "furthestLabel": "Group stage",
           "champion": false,
-          "status": "eliminated",
+          "status": "alive",
           "matches": [
             {
               "oppName": "Spain",
@@ -6499,7 +6164,7 @@
           "furthest": "group",
           "furthestLabel": "Group stage",
           "champion": false,
-          "status": "eliminated",
+          "status": "alive",
           "matches": [
             {
               "oppName": "Mexico",
@@ -6546,7 +6211,7 @@
           "furthest": "group",
           "furthestLabel": "Group stage",
           "champion": false,
-          "status": "eliminated",
+          "status": "alive",
           "matches": [
             {
               "oppName": "England",
@@ -6618,7 +6283,7 @@
           "furthest": "group",
           "furthestLabel": "Group stage",
           "champion": false,
-          "status": "eliminated",
+          "status": "alive",
           "matches": [
             {
               "oppName": "Argentina",
@@ -6654,7 +6319,7 @@
           "furthest": "group",
           "furthestLabel": "Group stage",
           "champion": false,
-          "status": "eliminated",
+          "status": "alive",
           "matches": [
             {
               "oppName": "Scotland",
@@ -6731,53 +6396,7 @@
           "r32": "2026-06-20T03:00Z"
         }
       },
-      "flop": {
-        "id": "2654",
-        "name": "Haiti",
-        "abbr": "HAI",
-        "group": "C",
-        "owner": "mildred",
-        "flag": "https://a.espncdn.com/i/teamlogos/countries/500/hai.png",
-        "played": 2,
-        "wins": 0,
-        "draws": 0,
-        "losses": 2,
-        "gf": 0,
-        "ga": 4,
-        "gd": -4,
-        "matchPoints": 0,
-        "bonusPoints": 0,
-        "total": 0,
-        "furthest": "group",
-        "furthestLabel": "Group stage",
-        "champion": false,
-        "status": "eliminated",
-        "matches": [
-          {
-            "oppName": "Scotland",
-            "oppFlag": "https://a.espncdn.com/i/teamlogos/countries/500/sco.png",
-            "round": "group",
-            "gf": 0,
-            "ga": 1,
-            "state": "post",
-            "detail": "FT",
-            "date": "2026-06-14T01:00Z",
-            "result": "L"
-          },
-          {
-            "oppName": "Brazil",
-            "oppFlag": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
-            "round": "group",
-            "gf": 0,
-            "ga": 3,
-            "state": "post",
-            "detail": "FT",
-            "date": "2026-06-20T00:30Z",
-            "result": "L"
-          }
-        ],
-        "reachedDates": {}
-      },
+      "flop": null,
       "rank": 1,
       "bootRank": 2
     }
@@ -7853,7 +7472,7 @@
       "furthest": "group",
       "furthestLabel": "Group stage",
       "champion": false,
-      "status": "eliminated",
+      "status": "alive",
       "matches": [
         {
           "oppName": "Belgium",
@@ -7997,7 +7616,7 @@
       "furthest": "group",
       "furthestLabel": "Group stage",
       "champion": false,
-      "status": "eliminated",
+      "status": "alive",
       "matches": [
         {
           "oppName": "Spain",
@@ -8116,7 +7735,7 @@
       "furthest": "group",
       "furthestLabel": "Group stage",
       "champion": false,
-      "status": "eliminated",
+      "status": "alive",
       "matches": [
         {
           "oppName": "Mexico",
@@ -8210,7 +7829,7 @@
       "furthest": "group",
       "furthestLabel": "Group stage",
       "champion": false,
-      "status": "eliminated",
+      "status": "alive",
       "matches": [
         {
           "oppName": "Switzerland",
@@ -8329,7 +7948,7 @@
       "furthest": "group",
       "furthestLabel": "Group stage",
       "champion": false,
-      "status": "eliminated",
+      "status": "alive",
       "matches": [
         {
           "oppName": "England",
@@ -8437,7 +8056,7 @@
       "furthest": "group",
       "furthestLabel": "Group stage",
       "champion": false,
-      "status": "eliminated",
+      "status": "alive",
       "matches": [
         {
           "oppName": "Colombia",
@@ -8473,7 +8092,7 @@
       "furthest": "group",
       "furthestLabel": "Group stage",
       "champion": false,
-      "status": "eliminated",
+      "status": "alive",
       "matches": [
         {
           "oppName": "Norway",
@@ -8509,7 +8128,7 @@
       "furthest": "group",
       "furthestLabel": "Group stage",
       "champion": false,
-      "status": "eliminated",
+      "status": "alive",
       "matches": [
         {
           "oppName": "Argentina",
@@ -8545,7 +8164,7 @@
       "furthest": "group",
       "furthestLabel": "Group stage",
       "champion": false,
-      "status": "eliminated",
+      "status": "alive",
       "matches": [
         {
           "oppName": "Australia",
@@ -8592,7 +8211,7 @@
       "furthest": "group",
       "furthestLabel": "Group stage",
       "champion": false,
-      "status": "eliminated",
+      "status": "alive",
       "matches": [
         {
           "oppName": "Sweden",
@@ -8628,7 +8247,7 @@
       "furthest": "group",
       "furthestLabel": "Group stage",
       "champion": false,
-      "status": "eliminated",
+      "status": "alive",
       "matches": [
         {
           "oppName": "Scotland",
@@ -8675,7 +8294,7 @@
       "furthest": "group",
       "furthestLabel": "Group stage",
       "champion": false,
-      "status": "eliminated",
+      "status": "alive",
       "matches": [
         {
           "oppName": "Germany",
@@ -8789,42 +8408,7 @@
       ],
       "reachedDates": {}
     },
-    "biggestFlop": {
-      "id": "11678",
-      "name": "Curaçao",
-      "abbr": "CUW",
-      "group": "E",
-      "owner": "arnold",
-      "flag": "https://a.espncdn.com/i/teamlogos/soccer/500/11678.png",
-      "played": 1,
-      "wins": 0,
-      "draws": 0,
-      "losses": 1,
-      "gf": 1,
-      "ga": 7,
-      "gd": -6,
-      "matchPoints": 0,
-      "bonusPoints": 0,
-      "total": 0,
-      "furthest": "group",
-      "furthestLabel": "Group stage",
-      "champion": false,
-      "status": "eliminated",
-      "matches": [
-        {
-          "oppName": "Germany",
-          "oppFlag": "https://a.espncdn.com/i/teamlogos/countries/500/ger.png",
-          "round": "group",
-          "gf": 1,
-          "ga": 7,
-          "state": "post",
-          "detail": "FT",
-          "date": "2026-06-14T17:00Z",
-          "result": "L"
-        }
-      ],
-      "reachedDates": {}
-    },
+    "biggestFlop": null,
     "matchesPlayed": 32,
     "matchesLive": 0,
     "matchesUpcoming": 72,
@@ -9006,6 +8590,6 @@
       }
     ]
   },
-  "fetchedAt": "2026-06-20T10:12:29.751Z",
+  "fetchedAt": "2026-06-20T10:40:40.469Z",
   "dateLondon": "2026-06-20"
 }

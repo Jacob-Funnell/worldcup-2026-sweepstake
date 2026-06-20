@@ -85,6 +85,26 @@ export function compute(matches, standings = {}) {
   const bracketDrawn = reachedKO.r32.size > 0;
   const bracketFull = reachedKO.r32.size >= 32;
 
+  // Genuine mathematical elimination during the group stage. A team is out only
+  // if it CANNOT finish in the top 2 of its group AND cannot finish 3rd — i.e.
+  // it's guaranteed to come 4th (≥3 group rivals already have more points than
+  // this team could reach by winning all its remaining games). 4th never
+  // advances, so this is certain and NEVER false-positives. (3rd-place teams may
+  // still qualify as one of the 8 best thirds, so we never call them out here —
+  // that resolves via the bracket once the groups finish.)
+  const groupPlayed = (t) => t.matches.filter((m) => m.round === 'group' && m.state === 'post').length;
+  const byGroup = {};
+  for (const t of byId.values()) (byGroup[t.group] ||= []).push(t);
+  const mathEliminated = new Set();
+  for (const letter in byGroup) {
+    const gs = byGroup[letter];
+    for (const t of gs) {
+      const maxPts = t.matchPoints + 3 * Math.max(0, 3 - groupPlayed(t));
+      const guaranteedAbove = gs.filter((o) => o !== t && o.matchPoints > maxPts).length;
+      if (guaranteedAbove >= 3) mathEliminated.add(t.id);
+    }
+  }
+
   // When did each group finish? (latest completed group match) — used to date a
   // team's "reached R32" bonus at the moment it actually qualified, so the trend
   // line attributes the bonus correctly instead of to the future-dated KO fixture.
@@ -125,7 +145,7 @@ export function compute(matches, standings = {}) {
     const gd = t.gf - t.ga;
     const total = t.matchPoints + t.bonusPoints;
     const furthest = furthestRound(t.reached, t.champion);
-    const status = teamStatus(t, matches, standings, reachedKO, bracketFull);
+    const status = teamStatus(t, matches, standings, reachedKO, bracketFull, mathEliminated);
     teams.push({
       id: t.id, name: t.name, abbr: t.abbr, group: t.group, owner: t.owner, flag: t.flag,
       played: t.played, wins: t.wins, draws: t.draws, losses: t.losses,
@@ -281,13 +301,14 @@ function furthestRound(reached, champion) {
   return best;
 }
 
-// Per-team status:
-//   champion   — won the final
-//   out        — lost a knockout tie (real elimination, knockouts)
-//   through    — ESPN says mathematically clinched a knockout berth
-//   eliminated — sitting in ESPN's bottom (drop) zone of its group
-//   alive      — still in it (mid-table / qualifying position, not yet clinched)
-function teamStatus(t, matches, standings, reachedKO, bracketFull) {
+// Per-team status — only ever "out" when GENUINELY out, never on current
+// position:
+//   champion — won the final
+//   through  — clinched a knockout berth (ESPN advanced=1)
+//   out      — lost a knockout tie, OR mathematically eliminated from the group,
+//              OR the full bracket is drawn and this team isn't in it
+//   alive    — still in it (the default; covers everyone not yet decided)
+function teamStatus(t, matches, standings, reachedKO, bracketFull, mathEliminated) {
   if (t.champion) return 'champion';
   // Lost a knockout match (post, not winner) → out.
   for (const m of matches) {
@@ -298,19 +319,15 @@ function teamStatus(t, matches, standings, reachedKO, bracketFull) {
       }
     }
   }
-  const s = standings[t.id];
-  if (s?.advanced) return 'through';
-  if (s?.zone === 'eliminated') return 'eliminated';
-  if (s?.zone) return 'alive'; // advancing / contention zones
-  // Fallback when ESPN standings are unavailable: bracket heuristic.
+  if (standings[t.id]?.advanced) return 'through';
+  if (mathEliminated.has(t.id)) return 'out';        // can't mathematically qualify
   const inKO = reachedKO.r32.has(t.id) || reachedKO.r16.has(t.id) || reachedKO.qf.has(t.id) ||
                reachedKO.sf.has(t.id) || reachedKO.final.has(t.id);
-  if (bracketFull && !inKO) return 'out';
+  if (bracketFull && !inKO) return 'out';            // groups finished, didn't make the cut
   return 'alive';
 }
 
-// Is this team no longer in contention? (real KO exit or ESPN drop zone)
-export const isOut = (status) => status === 'out' || status === 'eliminated';
+export const isOut = (status) => status === 'out';
 
 // Per-grouping flop: an out/eliminated team with the worst points-per-game.
 function pickFlop(mine) {
