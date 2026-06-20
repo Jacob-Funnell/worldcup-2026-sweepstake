@@ -59,6 +59,7 @@ export const ESPN_ROUND_LABELS = {
 // ESPN FIFA World Cup feed (no key, CORS-open).
 export const ESPN = {
   scoreboard: 'https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard',
+  standings: 'https://site.api.espn.com/apis/v2/sports/soccer/fifa.world/standings',
   // Whole tournament in one ranged query (11 Jun – 19 Jul 2026).
   range: '20260611-20260720',
   limit: 400,

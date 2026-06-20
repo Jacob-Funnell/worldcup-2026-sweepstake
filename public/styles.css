@@ -126,6 +126,10 @@ section { margin-top: 34px; }
 .delta-row .nm { flex: 1; font-weight: 600; font-size: 14px; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .delta-row .own { width: 9px; height: 9px; border-radius: 50%; flex: none; }
 .delta-row .d { font-weight: 800; font-size: 13px; color: #1d9d54; flex: none; }
+.muted { color: var(--ink-3); font-weight: 500; }
+.resbadge { font-weight: 800; font-size: 11.5px; padding: 3px 9px; border-radius: 999px; background: #eef0f6; color: var(--ink-2); flex: none; }
+.resbadge.good { background: var(--lewis-soft); color: #1d7a41; }
+.resbadge.bad { background: var(--mildred-soft); color: #b22a35; }
 
 /* ── Stat strip ────────────────────────────────────────────────────────────── */
 .stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
@@ -167,6 +171,7 @@ section { margin-top: 34px; }
 .tag.out { background: #f0f1f5; color: var(--ink-3); }
 .tag.champion { background: linear-gradient(135deg,var(--gold),var(--gold-deep)); color:#4a2f00; }
 .tag.best { background: var(--gold); color: #4a2f00; }
+.tag.through { background: #d6f3e2; color: #137a44; box-shadow: inset 0 0 0 1px #9ad9b8; }
 .team-row__pts { font-weight: 800; font-size: 16px; text-align: right; min-width: 30px; }
 .team-row__pts small { display: block; font-size: 10px; color: var(--ink-3); font-weight: 700; }
 
@@ -181,6 +186,10 @@ section { margin-top: 34px; }
 .grp-team .own { width: 8px; height: 8px; border-radius: 50%; flex: none; }
 .grp-team .pts { font-weight: 800; font-variant-numeric: tabular-nums; }
 .grp-team.qual { font-weight: 700; }
+.grp-team.gone { opacity: .5; }
+.qmark { font-size: 10px; }
+.qmark.up { filter: saturate(1.2); }
+.qmark.down { color: var(--mildred); }
 
 /* ── Scoring / footer ──────────────────────────────────────────────────────── */
 .rules { padding: 18px; }

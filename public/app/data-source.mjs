@@ -5,13 +5,48 @@
 // ─────────────────────────────────────────────────────────────────────────────
 import { ESPN, ESPN_ROUND_LABELS } from './config.mjs';
 
-// Pull the whole tournament (104 matches) in one ranged scoreboard call.
+// Pull the whole tournament (104 matches) plus the group standings, which carry
+// ESPN's authoritative per-team qualification/elimination note.
 export async function fetchTournament() {
-  const url = `${ESPN.scoreboard}?dates=${ESPN.range}&limit=${ESPN.limit}`;
-  const res = await fetch(url, { headers: { 'Accept': 'application/json' } });
-  if (!res.ok) throw new Error(`ESPN ${res.status}`);
-  const json = await res.json();
-  return normalise(json);
+  const sbUrl = `${ESPN.scoreboard}?dates=${ESPN.range}&limit=${ESPN.limit}`;
+  const [sbRes, stRes] = await Promise.allSettled([
+    fetch(sbUrl, { headers: { 'Accept': 'application/json' } }),
+    fetch(ESPN.standings, { headers: { 'Accept': 'application/json' } }),
+  ]);
+  if (sbRes.status !== 'fulfilled' || !sbRes.value.ok) {
+    throw new Error(`ESPN scoreboard ${sbRes.status === 'fulfilled' ? sbRes.value.status : 'unreachable'}`);
+  }
+  const json = await sbRes.value.json();
+  let standings = {};
+  if (stRes.status === 'fulfilled' && stRes.value.ok) {
+    try { standings = parseStandings(await stRes.value.json()); } catch { standings = {}; }
+  }
+  return { ...normalise(json), standings };
+}
+
+// Two distinct ESPN signals, and they mean different things:
+//   • the `advanced` stat (1) = MATHEMATICALLY clinched a knockout berth — reliable.
+//   • the note `description` = the standings-table ZONE for the team's CURRENT
+//     rank ("Advance to Round of 32" / "Best 8 advance" / "Eliminated"). It is
+//     positional, NOT a clinch — a team that has lost one game already shows the
+//     "Eliminated" zone. So we use `advanced` for hard status/bonus and the zone
+//     only as a soft live indicator.
+function parseStandings(json) {
+  const out = {};
+  for (const grp of json?.children || []) {
+    for (const e of grp?.standings?.entries || []) {
+      const id = e?.team?.id;
+      if (!id) continue;
+      const desc = (e?.note?.description || '').toLowerCase();
+      let zone = null;
+      if (desc.includes('eliminat')) zone = 'eliminated';
+      else if (desc.includes('advance')) zone = 'advancing';
+      else if (desc) zone = 'contention';
+      const stat = (n) => { const s = (e.stats || []).find((x) => x.name === n); return s ? s.value : null; };
+      out[id] = { zone, note: e?.note?.description || '', rank: stat('rank'), advanced: stat('advanced') === 1 };
+    }
+  }
+  return out;
 }
 
 // Build round windows from ESPN's own calendar so stage detection self-corrects

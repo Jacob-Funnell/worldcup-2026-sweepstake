@@ -3,7 +3,7 @@
 //  computes with the shared engine, and paints the page.
 // ─────────────────────────────────────────────────────────────────────────────
 import { fetchTournament } from './data-source.mjs';
-import { compute, computeSeries } from './compute.mjs';
+import { compute, computeSeries, deriveMovement } from './compute.mjs';
 import { PEOPLE, SNAPSHOT } from './config.mjs';
 import { trendSection, trendSVG } from './chart.mjs';
 import * as UI from './ui.mjs';
@@ -34,10 +34,11 @@ async function loadBaked() {
 }
 
 async function loadLive() {
-  const { matches, fetchedAt } = await fetchTournament();
+  const { matches, standings, fetchedAt } = await fetchTournament();
   if (!matches.length) throw new Error('empty feed');
-  const p = compute(matches);
-  p.series = computeSeries(matches);
+  const p = compute(matches, standings);
+  p.series = computeSeries(matches, standings);
+  p.movement = deriveMovement(p, matches);
   p.fetchedAt = fetchedAt;
   return p;
 }
@@ -46,14 +47,6 @@ function setStatus(state, text) {
   const el = $('#live');
   el.className = 'live ' + state;
   el.querySelector('.live__txt').textContent = text;
-}
-
-const londonToday = () => new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/London' }).format(new Date());
-// Movement is "since yesterday morning" — only valid if the snapshot is recent.
-function snapshotFresh(dateStr) {
-  if (!dateStr) return false;
-  const ms = new Date(londonToday() + 'T12:00:00Z') - new Date(dateStr + 'T12:00:00Z');
-  return ms <= 36 * 3600 * 1000; // today or yesterday
 }
 
 function timeAgo(iso) {
@@ -81,7 +74,7 @@ function paint(p) {
     </section>
 
     <section>
-      <div class="section-head"><h2>🌅 Overnight movers</h2><span class="hint">what changed since yesterday morning</span></div>
+      <div class="section-head"><h2>🌅 Latest movement</h2><span class="hint">results & rank changes from the last matchday</span></div>
       ${UI.renderMovers(p)}
     </section>
 
@@ -142,15 +135,8 @@ async function init() {
   const baked = await loadBaked();
   try {
     const live = await loadLive();
-    // Graft the overnight movement from the baked snapshot — but only if it's
-    // recent, so we never present days-old deltas as "overnight".
-    if (baked && snapshotFresh(baked.dateLondon)) {
-      live.movement = baked.movement;
-      live.dateLondon = baked.dateLondon;
-    } else {
-      live.movement = { since: null, groupings: {}, topMover: null, teamDeltas: [] };
-      live.dateLondon = baked?.dateLondon;
-    }
+    // Movement is computed live from the series inside loadLive — no dependency
+    // on the daily snapshot, so it's never falsely "no change".
     paint(live);
     setStatus('', `Live · scores ${timeAgo(live.fetchedAt)}`);
   } catch (e) {

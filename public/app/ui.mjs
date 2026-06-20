@@ -2,9 +2,12 @@
 //  Rendering. Pure string builders → injected into the page. No framework.
 // ─────────────────────────────────────────────────────────────────────────────
 import { PRIZES, ROUND_META } from './config.mjs';
+import { isOut } from './compute.mjs';
 
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const ord = (n) => ['🥇', '🥈', '🥉'][n - 1] || `${n}th`;
+const MON = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+const fmtDate = (d) => { if (!d) return ''; const x = new Date(d + 'T12:00:00Z'); return `${x.getUTCDate()} ${MON[x.getUTCMonth()]}`; };
 
 function avatar(g, big = false) {
   const img = g.img ? `<img src="${esc(g.img)}" alt="" onerror="this.style.display='none'">` : '';
@@ -43,11 +46,13 @@ export function renderBoard(p) {
   const mv = p.movement?.groupings || {};
   const cards = p.leaderboard.map((g) => {
     const m = mv[g.key];
-    let move = '<span class="move same">— no change yet</span>';
-    if (m && p.movement.since) {
-      if (m.rankDelta > 0) move = `<span class="move up">▲ up ${m.rankDelta} · +${m.pointsDelta} pts overnight</span>`;
-      else if (m.rankDelta < 0) move = `<span class="move down">▼ down ${-m.rankDelta} · +${m.pointsDelta} pts overnight</span>`;
-      else move = `<span class="move same">— held ${ord(g.rank)} · +${m.pointsDelta} pts overnight</span>`;
+    const since = p.movement?.since ? ` since ${fmtDate(p.movement.since)}` : '';
+    const dpts = m ? `${m.pointsDelta >= 0 ? '+' : ''}${m.pointsDelta} pts` : '';
+    let move = '<span class="move same">— just getting started</span>';
+    if (m && p.movement?.since) {
+      if (m.rankDelta > 0) move = `<span class="move up">▲ up ${m.rankDelta} · ${dpts}${since}</span>`;
+      else if (m.rankDelta < 0) move = `<span class="move down">▼ down ${-m.rankDelta} · ${dpts}${since}</span>`;
+      else move = `<span class="move same">— held ${ord(g.rank)} · ${dpts}${since}</span>`;
     }
     return `<div class="gcard rank${g.rank}" style="--c:${g.colour}">
       ${avatar(g)}
@@ -58,7 +63,8 @@ export function renderBoard(p) {
           <span class="pill">W${g.wins}–D${g.draws}–L${g.losses}</span>
           <span class="pill ${g.gd >= 0 ? 'good' : 'bad'}">GD ${g.gd >= 0 ? '+' : ''}${g.gd}</span>
           <span class="pill">⚽ ${g.gf}</span>
-          <span class="pill">${g.alive} alive</span>
+          ${g.through ? `<span class="pill good">✅ ${g.through} through</span>` : ''}
+          ${g.out ? `<span class="pill bad">🔴 ${g.out} out</span>` : `<span class="pill">${g.alive} in</span>`}
         </div>
       </div>
       <div class="gcard__score">
@@ -71,28 +77,32 @@ export function renderBoard(p) {
   return `<div class="board">${cards}</div>`;
 }
 
-/* ── Overnight movers ────────────────────────────────────────────────────── */
+/* ── Latest movement ─────────────────────────────────────────────────────── */
+const RES = { W: { t: 'beat', cls: 'good' }, D: { t: 'drew with', cls: '' }, L: { t: 'lost to', cls: 'bad' } };
 export function renderMovers(p) {
   const mvt = p.movement;
-  if (!mvt || !mvt.since) {
-    return `<div class="card movers"><div class="movers__empty">📸 No overnight movement to show yet — it lands here after the next morning snapshot. (Live scores above are always current.)</div></div>`;
+  const recent = mvt?.recent || [];
+  if (!recent.length) {
+    return `<div class="card movers"><div class="movers__empty">⏳ No completed matches yet — results land here as games finish.</div></div>`;
   }
-  const rows = (mvt.teamDeltas || []).map((t) => {
+  const rows = recent.map((t) => {
     const col = colourFor(p, t.owner);
+    const r = RES[t.result] || RES.D;
     return `<div class="delta-row">
       <span class="own" style="background:${col}"></span>
       ${flag(t.flag)}
-      <span class="nm">${esc(t.name)}</span>
-      <span class="d">+${t.totalDelta} pts${t.gfDelta ? ` · +${t.gfDelta}⚽` : ''}</span>
+      <span class="nm">${esc(t.name)} <span class="muted">${r.t} ${esc(t.oppName)} ${t.gf}–${t.ga}</span></span>
+      <span class="resbadge ${r.cls}">${t.live ? 'LIVE' : t.result}${t.pts ? ` +${t.pts}` : ''}</span>
     </div>`;
   }).join('');
   const mover = mvt.topMover ? p.leaderboard.find((g) => g.key === mvt.topMover) : null;
-  const head = mover
-    ? `<div class="prize__title">Overnight ${esc(mvt.since)} → ${esc(p.dateLondon || 'today')}</div>
-       <div style="font-weight:800;font-size:15px;margin:2px 0 10px">🚀 Biggest mover: <span style="color:${mover.colour}">${esc(mover.character)}</span> (${esc(mover.person)})</div>`
-    : '';
+  const mg = mover ? mvt.groupings[mover.key] : null;
+  const head = `<div class="prize__title">Latest matchday · ${esc(fmtDate(mvt.asOf))}</div>
+    ${mover && mg && mg.pointsDelta > 0
+      ? `<div style="font-weight:800;font-size:15px;margin:2px 0 10px">🚀 Biggest mover: <span style="color:${mover.colour}">${esc(mover.character)}</span> (${esc(mover.person)}) <span class="muted">+${mg.pointsDelta} pts</span></div>`
+      : '<div style="margin:2px 0 10px"></div>'}`;
   return `<div class="card movers">${head}
-    ${rows ? `<div class="delta-list">${rows}</div>` : '<div class="movers__empty">Quiet night — no points changed hands.</div>'}
+    <div class="delta-list">${rows}</div>
   </div>`;
 }
 
@@ -121,12 +131,14 @@ export function renderSquad(g) {
   const teams = g.teams.slice().sort((a, b) => b.total - a.total || b.gd - a.gd || b.gf - a.gf);
   const rows = teams.map((t) => {
     let tag = '<span class="tag alive">In</span>';
-    if (t.champion) tag = '<span class="tag champion">🏆 Champs</span>';
+    if (t.status === 'champion') tag = '<span class="tag champion">🏆 Champs</span>';
+    else if (t.status === 'through') tag = '<span class="tag through">Through ✅</span>';
+    else if (t.status === 'eliminated') tag = '<span class="tag out">Drop zone</span>';
     else if (t.status === 'out') tag = '<span class="tag out">Out</span>';
     const best = g.best && g.best.id === t.id ? '<span class="tag best">★ Top</span>' : '';
     const rec = t.played ? `${t.wins}W ${t.draws}D ${t.losses}L · ⚽${t.gf}-${t.ga}` : 'yet to play';
     const far = t.furthest !== 'group' ? ` · ${esc(ROUND_META[t.furthest]?.short || '')}` : '';
-    return `<div class="team-row ${t.status === 'out' ? 'out' : ''}">
+    return `<div class="team-row ${isOut(t.status) ? 'out' : ''}">
       ${flag(t.flag)}
       <div></div>
       <div class="team-row__nm">
@@ -165,10 +177,11 @@ export function renderGroups(p) {
       b.matchPoints - a.matchPoints || b.gd - a.gd || b.gf - a.gf || a.name.localeCompare(b.name));
     const rows = teams.map((t, i) => {
       const col = colourFor(p, t.owner);
-      return `<div class="grp-team ${i < 2 ? 'qual' : ''}">
+      const mark = t.status === 'through' ? ' <span class="qmark up">✅</span>' : isOut(t.status) ? ' <span class="qmark down">▼</span>' : '';
+      return `<div class="grp-team ${i < 2 ? 'qual' : ''} ${isOut(t.status) ? 'gone' : ''}">
         <span class="rk">${i + 1}</span>
         ${flag(t.flag)}
-        <span class="nm"><span class="own" style="background:${col}" title="${esc(t.owner)}"></span>${esc(t.name)}</span>
+        <span class="nm"><span class="own" style="background:${col}" title="${esc(t.owner)}"></span>${esc(t.name)}${mark}</span>
         <span class="pts">${t.matchPoints}</span>
       </div>`;
     }).join('');

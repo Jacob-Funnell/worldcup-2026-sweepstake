@@ -10,7 +10,7 @@ import { PEOPLE, PEOPLE_ORDER, SCORING, ROUND_META } from './config.mjs';
 
 const KO_ORDER = ['r32', 'r16', 'qf', 'sf', 'final']; // progression ladder (3rd-place excluded)
 
-export function compute(matches) {
+export function compute(matches, standings = {}) {
   const byId = new Map(TEAMS.map((t) => [t.id, { ...t,
     played: 0, wins: 0, draws: 0, losses: 0, gf: 0, ga: 0,
     matchPoints: 0, bonusPoints: 0, reached: new Set(['group']),
@@ -20,6 +20,13 @@ export function compute(matches) {
   // Which real (drawn) team ids appear in each knockout round → "reached" detection.
   const reachedKO = { r32: new Set(), r16: new Set(), qf: new Set(), sf: new Set(), final: new Set() };
   let finalPlayed = false;
+
+  // A team that ESPN marks `advanced` has MATHEMATICALLY clinched its R32 spot
+  // (not just sitting in a qualifying position) — treat that as having reached
+  // R32, so the +3 bonus is awarded on a real clinch and never bounces around.
+  for (const [id, s] of Object.entries(standings)) {
+    if (s?.advanced && byId.has(id)) reachedKO.r32.add(id);
+  }
 
   for (const m of matches) {
     const sides = [m.home, m.away];
@@ -118,7 +125,7 @@ export function compute(matches) {
     const gd = t.gf - t.ga;
     const total = t.matchPoints + t.bonusPoints;
     const furthest = furthestRound(t.reached, t.champion);
-    const status = teamStatus(t, matches, reachedKO, bracketFull);
+    const status = teamStatus(t, matches, standings, reachedKO, bracketFull);
     teams.push({
       id: t.id, name: t.name, abbr: t.abbr, group: t.group, owner: t.owner, flag: t.flag,
       played: t.played, wins: t.wins, draws: t.draws, losses: t.losses,
@@ -136,11 +143,11 @@ export function compute(matches) {
       a.matchPoints += t.matchPoints; a.bonusPoints += t.bonusPoints; a.total += t.total;
       a.gf += t.gf; a.ga += t.ga; a.played += t.played;
       a.wins += t.wins; a.draws += t.draws; a.losses += t.losses;
-      if (t.status === 'out') a.out += 1; else if (t.champion) { a.alive += 1; a.champions += 1; }
-      else a.alive += 1;
+      if (isOut(t.status)) a.out += 1;
+      else { a.alive += 1; if (t.status === 'through') a.through += 1; if (t.status === 'champion') a.champions += 1; }
       return a;
     }, { matchPoints: 0, bonusPoints: 0, total: 0, gf: 0, ga: 0, played: 0,
-         wins: 0, draws: 0, losses: 0, alive: 0, out: 0, champions: 0 });
+         wins: 0, draws: 0, losses: 0, alive: 0, out: 0, through: 0, champions: 0 });
     agg.gd = agg.gf - agg.ga;
     const best = [...mine].sort((a, b) => b.total - a.total || b.gd - a.gd)[0] || null;
     const flop = pickFlop(mine);
@@ -182,9 +189,9 @@ export function compute(matches) {
 // played, and round bonuses to the day a team actually qualified for that stage
 // (reachedDates) — NOT the future-dated knockout fixture. This guarantees the
 // last point of every line equals the live leaderboard.
-export function computeSeries(matches) {
+export function computeSeries(matches, standings = {}) {
   const dayOf = (iso) => String(iso).slice(0, 10); // UTC calendar day
-  const full = compute(matches);
+  const full = compute(matches, standings);
   const days = [...new Set(matches.filter((m) => m.state !== 'pre').map((m) => dayOf(m.date)))].sort();
   const series = {};
   for (const key of PEOPLE_ORDER) series[key] = { points: [], goals: [] };
@@ -214,6 +221,57 @@ export function computeSeries(matches) {
   return { days, series };
 }
 
+// Day-over-day movement, computed live from the trend series (NOT the daily
+// snapshot, which depends on the cron). Compares the last two match-days for
+// rank/points changes, and lists the teams that actually played on the latest
+// match-day. Always current — never falsely "no change".
+export function deriveMovement(payload, matches) {
+  const empty = { since: null, asOf: null, groupings: {}, topMover: null, recent: [] };
+  const s = payload?.series;
+  const days = s?.days || [];
+  if (!days.length) return empty;
+  const last = days.length - 1, prev = last - 1;
+  const ptsOn = (k, i) => s.series[k]?.points[i] ?? 0;
+  const gfOn = (k, i) => s.series[k]?.goals[i] ?? 0;
+  const rankOn = (i) => {
+    const arr = PEOPLE_ORDER.map((k) => ({ k, pts: ptsOn(k, i), gf: gfOn(k, i) }))
+      .sort((a, b) => b.pts - a.pts || b.gf - a.gf);
+    const r = {}; arr.forEach((x, idx) => { r[x.k] = idx + 1; }); return r;
+  };
+  // rankNow comes from the authoritative leaderboard (same points→GD→goals
+  // tiebreak the cards show); rankBefore is approximated from the prior day's
+  // series (points→goals) — close enough for "did they climb overnight".
+  const rNow = {}; for (const g of payload.leaderboard || []) rNow[g.key] = g.rank;
+  const rBefore = prev >= 0 ? rankOn(prev) : { ...rNow };
+  const groupings = {}; let topMover = null, topGain = 0;
+  for (const k of PEOPLE_ORDER) {
+    const pNow = ptsOn(k, last), pBefore = prev >= 0 ? ptsOn(k, prev) : pNow;
+    const pointsDelta = pNow - pBefore, gfDelta = gfOn(k, last) - (prev >= 0 ? gfOn(k, prev) : gfOn(k, last));
+    const rn = rNow[k] ?? rankOn(last)[k];
+    groupings[k] = { pointsNow: pNow, pointsDelta, gfDelta, rankNow: rn, rankBefore: rBefore[k], rankDelta: rBefore[k] - rn };
+    if (pointsDelta > topGain) { topGain = pointsDelta; topMover = k; }
+  }
+  // Teams that played on the latest match-day (what actually happened).
+  const dayOf = (iso) => String(iso).slice(0, 10);
+  const lastDay = days[last];
+  const byId = new Map((payload.teams || []).map((t) => [t.id, t]));
+  const recent = [];
+  for (const m of matches || []) {
+    if (m.state === 'pre' || dayOf(m.date) !== lastDay) continue;
+    for (const [self, opp] of [[m.home, m.away], [m.away, m.home]]) {
+      const t = byId.get(self.id);
+      if (!t || self.score == null || opp.score == null) continue;
+      const result = self.score > opp.score ? 'W' : self.score < opp.score ? 'L' : 'D';
+      recent.push({ id: self.id, name: t.name, flag: t.flag, owner: t.owner, result,
+        gf: self.score, ga: opp.score, oppName: opp.name,
+        pts: m.state === 'post' ? (result === 'W' ? SCORING.matchPoints.win : result === 'D' ? SCORING.matchPoints.draw : SCORING.matchPoints.loss) : 0,
+        live: m.state === 'in' });
+    }
+  }
+  recent.sort((a, b) => b.pts - a.pts || b.gf - a.gf);
+  return { since: prev >= 0 ? days[prev] : null, asOf: lastDay, groupings, topMover, recent };
+}
+
 function furthestRound(reached, champion) {
   if (champion) return 'final';
   let best = 'group';
@@ -223,36 +281,47 @@ function furthestRound(reached, champion) {
   return best;
 }
 
-// A team is OUT if it lost a knockout tie, or the full R32 field is set and it didn't make it.
-function teamStatus(t, matches, reachedKO, bracketFull) {
+// Per-team status:
+//   champion   — won the final
+//   out        — lost a knockout tie (real elimination, knockouts)
+//   through    — ESPN says mathematically clinched a knockout berth
+//   eliminated — sitting in ESPN's bottom (drop) zone of its group
+//   alive      — still in it (mid-table / qualifying position, not yet clinched)
+function teamStatus(t, matches, standings, reachedKO, bracketFull) {
   if (t.champion) return 'champion';
-  // Lost a knockout match (post, not winner) → eliminated.
+  // Lost a knockout match (post, not winner) → out.
   for (const m of matches) {
     if (m.state !== 'post' || m.round === 'group' || m.round === 'third') continue;
     for (const [self, opp] of [[m.home, m.away], [m.away, m.home]]) {
       if (self.id === t.id && !self.winner && (opp.id && opp.id !== self.id)) {
-        // ensure it was a real decided tie (someone won)
         if (opp.winner || (self.score != null && opp.score != null && self.score < opp.score)) return 'out';
       }
     }
   }
-  // Group team that didn't make the (fully-populated) bracket → out.
+  const s = standings[t.id];
+  if (s?.advanced) return 'through';
+  if (s?.zone === 'eliminated') return 'eliminated';
+  if (s?.zone) return 'alive'; // advancing / contention zones
+  // Fallback when ESPN standings are unavailable: bracket heuristic.
   const inKO = reachedKO.r32.has(t.id) || reachedKO.r16.has(t.id) || reachedKO.qf.has(t.id) ||
                reachedKO.sf.has(t.id) || reachedKO.final.has(t.id);
   if (bracketFull && !inKO) return 'out';
   return 'alive';
 }
 
-// Per-grouping flop: an out team with the worst points-per-game (most disappointing).
+// Is this team no longer in contention? (real KO exit or ESPN drop zone)
+export const isOut = (status) => status === 'out' || status === 'eliminated';
+
+// Per-grouping flop: an out/eliminated team with the worst points-per-game.
 function pickFlop(mine) {
-  const out = mine.filter((t) => t.status === 'out' && t.played > 0);
+  const out = mine.filter((t) => isOut(t.status) && t.played > 0);
   if (!out.length) return null;
   return out.sort((a, b) => (a.total / a.played) - (b.total / b.played) || a.gd - b.gd)[0];
 }
 
-// Tournament flop: the eliminated team that scored fewest points for games played.
+// Tournament flop: the out/eliminated team that scored fewest points for games played.
 function overallFlop(teams) {
-  const out = teams.filter((t) => t.status === 'out' && t.played > 0);
+  const out = teams.filter((t) => isOut(t.status) && t.played > 0);
   if (!out.length) return null;
   return out.sort((a, b) => a.total - b.total || a.gd - b.gd)[0];
 }

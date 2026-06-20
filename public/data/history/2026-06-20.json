@@ -1,6 +1,6 @@
 {
   "date": "2026-06-20",
-  "generatedAt": "2026-06-20T09:49:17.867Z",
+  "generatedAt": "2026-06-20T10:12:29.754Z",
   "matchesPlayed": 32,
   "groupings": {
     "mildred": {
@@ -43,7 +43,7 @@
     "203": {
       "total": 9,
       "gf": 3,
-      "status": "alive",
+      "status": "through",
       "name": "Mexico",
       "owner": "lewis"
     },
@@ -141,7 +141,7 @@
     "465": {
       "total": 0,
       "gf": 0,
-      "status": "alive",
+      "status": "eliminated",
       "name": "Türkiye",
       "owner": "lewis"
     },
@@ -155,7 +155,7 @@
     "467": {
       "total": 1,
       "gf": 1,
-      "status": "alive",
+      "status": "eliminated",
       "name": "South Africa",
       "owner": "mildred"
     },
@@ -183,7 +183,7 @@
     "477": {
       "total": 0,
       "gf": 2,
-      "status": "alive",
+      "status": "eliminated",
       "name": "Croatia",
       "owner": "mildred"
     },
@@ -218,7 +218,7 @@
     "624": {
       "total": 0,
       "gf": 0,
-      "status": "alive",
+      "status": "eliminated",
       "name": "Algeria",
       "owner": "mildred"
     },
@@ -253,42 +253,42 @@
     "659": {
       "total": 0,
       "gf": 1,
-      "status": "alive",
+      "status": "eliminated",
       "name": "Tunisia",
       "owner": "arnold"
     },
     "660": {
       "total": 9,
       "gf": 6,
-      "status": "alive",
+      "status": "through",
       "name": "United States",
       "owner": "mildred"
     },
     "2570": {
       "total": 0,
       "gf": 1,
-      "status": "alive",
+      "status": "eliminated",
       "name": "Uzbekistan",
       "owner": "lewis"
     },
     "2597": {
       "total": 1,
       "gf": 0,
-      "status": "alive",
+      "status": "eliminated",
       "name": "Cape Verde",
       "owner": "mildred"
     },
     "2620": {
       "total": 1,
       "gf": 1,
-      "status": "alive",
+      "status": "eliminated",
       "name": "Egypt",
       "owner": "mildred"
     },
     "2654": {
       "total": 0,
       "gf": 0,
-      "status": "alive",
+      "status": "eliminated",
       "name": "Haiti",
       "owner": "mildred"
     },
@@ -330,14 +330,14 @@
     "4375": {
       "total": 0,
       "gf": 1,
-      "status": "alive",
+      "status": "eliminated",
       "name": "Iraq",
       "owner": "arnold"
     },
     "4398": {
       "total": 1,
       "gf": 1,
-      "status": "alive",
+      "status": "eliminated",
       "name": "Qatar",
       "owner": "lewis"
     },
@@ -358,7 +358,7 @@
     "11678": {
       "total": 0,
       "gf": 1,
-      "status": "alive",
+      "status": "eliminated",
       "name": "Curaçao",
       "owner": "arnold"
     }
