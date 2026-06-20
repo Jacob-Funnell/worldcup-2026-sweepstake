@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-20T10:40:40.471Z",
+  "generatedAt": "2026-06-20T10:53:02.072Z",
   "bracketDrawn": true,
   "tournamentOver": false,
   "leaderboard": [
@@ -18,8 +18,8 @@
       "wins": 7,
       "draws": 8,
       "losses": 7,
-      "alive": 16,
-      "out": 0,
+      "alive": 15,
+      "out": 1,
       "through": 1,
       "champions": 0,
       "gd": 5,
@@ -641,7 +641,7 @@
           "furthest": "group",
           "furthestLabel": "Group stage",
           "champion": false,
-          "status": "alive",
+          "status": "out",
           "matches": [
             {
               "oppName": "Scotland",
@@ -718,7 +718,53 @@
           "r32": "2026-06-20T03:00Z"
         }
       },
-      "flop": null,
+      "flop": {
+        "id": "2654",
+        "name": "Haiti",
+        "abbr": "HAI",
+        "group": "C",
+        "owner": "mildred",
+        "flag": "https://a.espncdn.com/i/teamlogos/countries/500/hai.png",
+        "played": 2,
+        "wins": 0,
+        "draws": 0,
+        "losses": 2,
+        "gf": 0,
+        "ga": 4,
+        "gd": -4,
+        "matchPoints": 0,
+        "bonusPoints": 0,
+        "total": 0,
+        "furthest": "group",
+        "furthestLabel": "Group stage",
+        "champion": false,
+        "status": "out",
+        "matches": [
+          {
+            "oppName": "Scotland",
+            "oppFlag": "https://a.espncdn.com/i/teamlogos/countries/500/sco.png",
+            "round": "group",
+            "gf": 0,
+            "ga": 1,
+            "state": "post",
+            "detail": "FT",
+            "date": "2026-06-14T01:00Z",
+            "result": "L"
+          },
+          {
+            "oppName": "Brazil",
+            "oppFlag": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
+            "round": "group",
+            "gf": 0,
+            "ga": 3,
+            "state": "post",
+            "detail": "FT",
+            "date": "2026-06-20T00:30Z",
+            "result": "L"
+          }
+        ],
+        "reachedDates": {}
+      },
       "rank": 1,
       "bootRank": 2
     },
@@ -1441,8 +1487,8 @@
       "wins": 7,
       "draws": 5,
       "losses": 9,
-      "alive": 16,
-      "out": 0,
+      "alive": 15,
+      "out": 1,
       "through": 1,
       "champions": 0,
       "gd": -5,
@@ -2053,7 +2099,7 @@
           "furthest": "group",
           "furthestLabel": "Group stage",
           "champion": false,
-          "status": "alive",
+          "status": "out",
           "matches": [
             {
               "oppName": "Australia",
@@ -2130,7 +2176,53 @@
           "r32": "2026-06-19T01:00Z"
         }
       },
-      "flop": null,
+      "flop": {
+        "id": "465",
+        "name": "Türkiye",
+        "abbr": "TUR",
+        "group": "D",
+        "owner": "lewis",
+        "flag": "https://a.espncdn.com/i/teamlogos/countries/500/tur.png",
+        "played": 2,
+        "wins": 0,
+        "draws": 0,
+        "losses": 2,
+        "gf": 0,
+        "ga": 3,
+        "gd": -3,
+        "matchPoints": 0,
+        "bonusPoints": 0,
+        "total": 0,
+        "furthest": "group",
+        "furthestLabel": "Group stage",
+        "champion": false,
+        "status": "out",
+        "matches": [
+          {
+            "oppName": "Australia",
+            "oppFlag": "https://a.espncdn.com/i/teamlogos/countries/500/aus.png",
+            "round": "group",
+            "gf": 0,
+            "ga": 2,
+            "state": "post",
+            "detail": "FT",
+            "date": "2026-06-14T04:00Z",
+            "result": "L"
+          },
+          {
+            "oppName": "Paraguay",
+            "oppFlag": "https://a.espncdn.com/i/teamlogos/countries/500/par.png",
+            "round": "group",
+            "gf": 0,
+            "ga": 1,
+            "state": "post",
+            "detail": "FT",
+            "date": "2026-06-20T03:00Z",
+            "result": "L"
+          }
+        ],
+        "reachedDates": {}
+      },
       "rank": 3,
       "bootRank": 3
     }
@@ -2855,8 +2947,8 @@
       "wins": 7,
       "draws": 8,
       "losses": 7,
-      "alive": 16,
-      "out": 0,
+      "alive": 15,
+      "out": 1,
       "through": 1,
       "champions": 0,
       "gd": 5,
@@ -3478,7 +3570,7 @@
           "furthest": "group",
           "furthestLabel": "Group stage",
           "champion": false,
-          "status": "alive",
+          "status": "out",
           "matches": [
             {
               "oppName": "Scotland",
@@ -3555,7 +3647,53 @@
           "r32": "2026-06-20T03:00Z"
         }
       },
-      "flop": null,
+      "flop": {
+        "id": "2654",
+        "name": "Haiti",
+        "abbr": "HAI",
+        "group": "C",
+        "owner": "mildred",
+        "flag": "https://a.espncdn.com/i/teamlogos/countries/500/hai.png",
+        "played": 2,
+        "wins": 0,
+        "draws": 0,
+        "losses": 2,
+        "gf": 0,
+        "ga": 4,
+        "gd": -4,
+        "matchPoints": 0,
+        "bonusPoints": 0,
+        "total": 0,
+        "furthest": "group",
+        "furthestLabel": "Group stage",
+        "champion": false,
+        "status": "out",
+        "matches": [
+          {
+            "oppName": "Scotland",
+            "oppFlag": "https://a.espncdn.com/i/teamlogos/countries/500/sco.png",
+            "round": "group",
+            "gf": 0,
+            "ga": 1,
+            "state": "post",
+            "detail": "FT",
+            "date": "2026-06-14T01:00Z",
+            "result": "L"
+          },
+          {
+            "oppName": "Brazil",
+            "oppFlag": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
+            "round": "group",
+            "gf": 0,
+            "ga": 3,
+            "state": "post",
+            "detail": "FT",
+            "date": "2026-06-20T00:30Z",
+            "result": "L"
+          }
+        ],
+        "reachedDates": {}
+      },
       "rank": 1,
       "bootRank": 2
     },
@@ -3574,8 +3712,8 @@
       "wins": 7,
       "draws": 5,
       "losses": 9,
-      "alive": 16,
-      "out": 0,
+      "alive": 15,
+      "out": 1,
       "through": 1,
       "champions": 0,
       "gd": -5,
@@ -4186,7 +4324,7 @@
           "furthest": "group",
           "furthestLabel": "Group stage",
           "champion": false,
-          "status": "alive",
+          "status": "out",
           "matches": [
             {
               "oppName": "Australia",
@@ -4263,7 +4401,53 @@
           "r32": "2026-06-19T01:00Z"
         }
       },
-      "flop": null,
+      "flop": {
+        "id": "465",
+        "name": "Türkiye",
+        "abbr": "TUR",
+        "group": "D",
+        "owner": "lewis",
+        "flag": "https://a.espncdn.com/i/teamlogos/countries/500/tur.png",
+        "played": 2,
+        "wins": 0,
+        "draws": 0,
+        "losses": 2,
+        "gf": 0,
+        "ga": 3,
+        "gd": -3,
+        "matchPoints": 0,
+        "bonusPoints": 0,
+        "total": 0,
+        "furthest": "group",
+        "furthestLabel": "Group stage",
+        "champion": false,
+        "status": "out",
+        "matches": [
+          {
+            "oppName": "Australia",
+            "oppFlag": "https://a.espncdn.com/i/teamlogos/countries/500/aus.png",
+            "round": "group",
+            "gf": 0,
+            "ga": 2,
+            "state": "post",
+            "detail": "FT",
+            "date": "2026-06-14T04:00Z",
+            "result": "L"
+          },
+          {
+            "oppName": "Paraguay",
+            "oppFlag": "https://a.espncdn.com/i/teamlogos/countries/500/par.png",
+            "round": "group",
+            "gf": 0,
+            "ga": 1,
+            "state": "post",
+            "detail": "FT",
+            "date": "2026-06-20T03:00Z",
+            "result": "L"
+          }
+        ],
+        "reachedDates": {}
+      },
       "rank": 3,
       "bootRank": 3
     }
@@ -4284,8 +4468,8 @@
       "wins": 7,
       "draws": 5,
       "losses": 9,
-      "alive": 16,
-      "out": 0,
+      "alive": 15,
+      "out": 1,
       "through": 1,
       "champions": 0,
       "gd": -5,
@@ -4896,7 +5080,7 @@
           "furthest": "group",
           "furthestLabel": "Group stage",
           "champion": false,
-          "status": "alive",
+          "status": "out",
           "matches": [
             {
               "oppName": "Australia",
@@ -4973,7 +5157,53 @@
           "r32": "2026-06-19T01:00Z"
         }
       },
-      "flop": null,
+      "flop": {
+        "id": "465",
+        "name": "Türkiye",
+        "abbr": "TUR",
+        "group": "D",
+        "owner": "lewis",
+        "flag": "https://a.espncdn.com/i/teamlogos/countries/500/tur.png",
+        "played": 2,
+        "wins": 0,
+        "draws": 0,
+        "losses": 2,
+        "gf": 0,
+        "ga": 3,
+        "gd": -3,
+        "matchPoints": 0,
+        "bonusPoints": 0,
+        "total": 0,
+        "furthest": "group",
+        "furthestLabel": "Group stage",
+        "champion": false,
+        "status": "out",
+        "matches": [
+          {
+            "oppName": "Australia",
+            "oppFlag": "https://a.espncdn.com/i/teamlogos/countries/500/aus.png",
+            "round": "group",
+            "gf": 0,
+            "ga": 2,
+            "state": "post",
+            "detail": "FT",
+            "date": "2026-06-14T04:00Z",
+            "result": "L"
+          },
+          {
+            "oppName": "Paraguay",
+            "oppFlag": "https://a.espncdn.com/i/teamlogos/countries/500/par.png",
+            "round": "group",
+            "gf": 0,
+            "ga": 1,
+            "state": "post",
+            "detail": "FT",
+            "date": "2026-06-20T03:00Z",
+            "result": "L"
+          }
+        ],
+        "reachedDates": {}
+      },
       "rank": 3,
       "bootRank": 3
     },
@@ -5696,8 +5926,8 @@
       "wins": 7,
       "draws": 8,
       "losses": 7,
-      "alive": 16,
-      "out": 0,
+      "alive": 15,
+      "out": 1,
       "through": 1,
       "champions": 0,
       "gd": 5,
@@ -6319,7 +6549,7 @@
           "furthest": "group",
           "furthestLabel": "Group stage",
           "champion": false,
-          "status": "alive",
+          "status": "out",
           "matches": [
             {
               "oppName": "Scotland",
@@ -6396,7 +6626,53 @@
           "r32": "2026-06-20T03:00Z"
         }
       },
-      "flop": null,
+      "flop": {
+        "id": "2654",
+        "name": "Haiti",
+        "abbr": "HAI",
+        "group": "C",
+        "owner": "mildred",
+        "flag": "https://a.espncdn.com/i/teamlogos/countries/500/hai.png",
+        "played": 2,
+        "wins": 0,
+        "draws": 0,
+        "losses": 2,
+        "gf": 0,
+        "ga": 4,
+        "gd": -4,
+        "matchPoints": 0,
+        "bonusPoints": 0,
+        "total": 0,
+        "furthest": "group",
+        "furthestLabel": "Group stage",
+        "champion": false,
+        "status": "out",
+        "matches": [
+          {
+            "oppName": "Scotland",
+            "oppFlag": "https://a.espncdn.com/i/teamlogos/countries/500/sco.png",
+            "round": "group",
+            "gf": 0,
+            "ga": 1,
+            "state": "post",
+            "detail": "FT",
+            "date": "2026-06-14T01:00Z",
+            "result": "L"
+          },
+          {
+            "oppName": "Brazil",
+            "oppFlag": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
+            "round": "group",
+            "gf": 0,
+            "ga": 3,
+            "state": "post",
+            "detail": "FT",
+            "date": "2026-06-20T00:30Z",
+            "result": "L"
+          }
+        ],
+        "reachedDates": {}
+      },
       "rank": 1,
       "bootRank": 2
     }
@@ -8164,7 +8440,7 @@
       "furthest": "group",
       "furthestLabel": "Group stage",
       "champion": false,
-      "status": "alive",
+      "status": "out",
       "matches": [
         {
           "oppName": "Australia",
@@ -8247,7 +8523,7 @@
       "furthest": "group",
       "furthestLabel": "Group stage",
       "champion": false,
-      "status": "alive",
+      "status": "out",
       "matches": [
         {
           "oppName": "Scotland",
@@ -8408,7 +8684,53 @@
       ],
       "reachedDates": {}
     },
-    "biggestFlop": null,
+    "biggestFlop": {
+      "id": "2654",
+      "name": "Haiti",
+      "abbr": "HAI",
+      "group": "C",
+      "owner": "mildred",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/hai.png",
+      "played": 2,
+      "wins": 0,
+      "draws": 0,
+      "losses": 2,
+      "gf": 0,
+      "ga": 4,
+      "gd": -4,
+      "matchPoints": 0,
+      "bonusPoints": 0,
+      "total": 0,
+      "furthest": "group",
+      "furthestLabel": "Group stage",
+      "champion": false,
+      "status": "out",
+      "matches": [
+        {
+          "oppName": "Scotland",
+          "oppFlag": "https://a.espncdn.com/i/teamlogos/countries/500/sco.png",
+          "round": "group",
+          "gf": 0,
+          "ga": 1,
+          "state": "post",
+          "detail": "FT",
+          "date": "2026-06-14T01:00Z",
+          "result": "L"
+        },
+        {
+          "oppName": "Brazil",
+          "oppFlag": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
+          "round": "group",
+          "gf": 0,
+          "ga": 3,
+          "state": "post",
+          "detail": "FT",
+          "date": "2026-06-20T00:30Z",
+          "result": "L"
+        }
+      ],
+      "reachedDates": {}
+    },
     "matchesPlayed": 32,
     "matchesLive": 0,
     "matchesUpcoming": 72,
@@ -8590,6 +8912,6 @@
       }
     ]
   },
-  "fetchedAt": "2026-06-20T10:40:40.469Z",
+  "fetchedAt": "2026-06-20T10:53:02.068Z",
   "dateLondon": "2026-06-20"
 }

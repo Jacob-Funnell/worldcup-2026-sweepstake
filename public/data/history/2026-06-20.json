@@ -1,6 +1,6 @@
 {
   "date": "2026-06-20",
-  "generatedAt": "2026-06-20T10:40:40.471Z",
+  "generatedAt": "2026-06-20T10:53:02.072Z",
   "matchesPlayed": 32,
   "groupings": {
     "mildred": {
@@ -141,7 +141,7 @@
     "465": {
       "total": 0,
       "gf": 0,
-      "status": "alive",
+      "status": "out",
       "name": "Türkiye",
       "owner": "lewis"
     },
@@ -288,7 +288,7 @@
     "2654": {
       "total": 0,
       "gf": 0,
-      "status": "alive",
+      "status": "out",
       "name": "Haiti",
       "owner": "mildred"
     },
