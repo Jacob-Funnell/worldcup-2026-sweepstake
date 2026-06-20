@@ -78,6 +78,40 @@ export function compute(matches) {
   const bracketDrawn = reachedKO.r32.size > 0;
   const bracketFull = reachedKO.r32.size >= 32;
 
+  // When did each group finish? (latest completed group match) — used to date a
+  // team's "reached R32" bonus at the moment it actually qualified, so the trend
+  // line attributes the bonus correctly instead of to the future-dated KO fixture.
+  const groupLastDate = {};
+  for (const m of matches) {
+    if (m.round !== 'group' || m.state !== 'post') continue;
+    const g = byId.get(m.home.id)?.group || byId.get(m.away.id)?.group;
+    if (g && (!groupLastDate[g] || m.date > groupLastDate[g])) groupLastDate[g] = m.date;
+  }
+  const lastDateInRound = (t, round) => {
+    let d = null;
+    for (const mm of t.matches) if (mm.round === round && mm.state === 'post' && (!d || mm.date > d)) d = mm.date;
+    return d;
+  };
+  const reachDatesFor = (t) => {
+    const rd = {};
+    // Team's latest completed match — the guaranteed-non-null fallback so a
+    // reached round's bonus is NEVER dropped from the trend (which would make
+    // the last point disagree with the leaderboard).
+    let latest = null;
+    for (const mm of t.matches) if (mm.state === 'post' && (!latest || mm.date > latest)) latest = mm.date;
+    for (let i = 0; i < KO_ORDER.length; i++) {
+      const R = KO_ORDER[i];
+      if (!t.reached.has(R)) continue;
+      // Reached R32 = qualified from the group (group's last completed match).
+      // Reached a deeper round = won the prior KO round (that match's date).
+      rd[R] = (R === 'r32'
+        ? (groupLastDate[t.group] || lastDateInRound(t, 'group'))
+        : (lastDateInRound(t, KO_ORDER[i - 1]) || rd[KO_ORDER[i - 1]])) || latest;
+    }
+    if (t.champion) rd.champion = lastDateInRound(t, 'final') || rd.final || latest;
+    return rd;
+  };
+
   // Per-team derived fields.
   const teams = [];
   for (const t of byId.values()) {
@@ -90,7 +124,7 @@ export function compute(matches) {
       played: t.played, wins: t.wins, draws: t.draws, losses: t.losses,
       gf: t.gf, ga: t.ga, gd, matchPoints: t.matchPoints, bonusPoints: t.bonusPoints,
       total, furthest, furthestLabel: ROUND_META[furthest]?.label || 'Group stage',
-      champion: t.champion, status, matches: t.matches,
+      champion: t.champion, status, matches: t.matches, reachedDates: reachDatesFor(t),
     });
   }
   teams.sort((a, b) => b.total - a.total || b.gd - a.gd || b.gf - a.gf || a.name.localeCompare(b.name));
@@ -141,20 +175,41 @@ export function compute(matches) {
 
 // Leaders-over-time. Reconstructs cumulative standings at the end of each
 // match-day from the start of the tournament — so the trend line is real from
-// day one even though daily snapshots only began later. Reuses compute() per
-// day so the series can never disagree with the live numbers.
+// day one even though daily snapshots only began later.
+//
+// Built from ONE compute() pass (single source of truth for the numbers), then
+// re-bucketed by date: match points/goals are attributed to the day a game was
+// played, and round bonuses to the day a team actually qualified for that stage
+// (reachedDates) — NOT the future-dated knockout fixture. This guarantees the
+// last point of every line equals the live leaderboard.
 export function computeSeries(matches) {
   const dayOf = (iso) => String(iso).slice(0, 10); // UTC calendar day
+  const full = compute(matches);
   const days = [...new Set(matches.filter((m) => m.state !== 'pre').map((m) => dayOf(m.date)))].sort();
   const series = {};
   for (const key of PEOPLE_ORDER) series[key] = { points: [], goals: [] };
+  const ptsFor = (r) => r === 'W' ? SCORING.matchPoints.win : r === 'D' ? SCORING.matchPoints.draw : SCORING.matchPoints.loss;
+
   for (const d of days) {
-    const upto = matches.filter((m) => dayOf(m.date) <= d);
-    const p = compute(upto);
-    for (const g of p.leaderboard) {
-      series[g.key].points.push(g.total);
-      series[g.key].goals.push(g.gf);
+    const tot = {};
+    for (const k of PEOPLE_ORDER) tot[k] = { points: 0, goals: 0 };
+    for (const t of full.teams) {
+      const own = tot[t.owner];
+      if (!own) continue;
+      for (const mm of t.matches) {
+        if (dayOf(mm.date) > d) continue;
+        own.goals += mm.gf;                                   // goals count once a game kicks off
+        if (mm.state === 'post') own.points += ptsFor(mm.result);
+      }
+      for (const R of KO_ORDER) {
+        const rd = t.reachedDates?.[R];
+        if (rd && dayOf(rd) <= d) own.points += SCORING.roundBonus[R];
+      }
+      if (t.champion && t.reachedDates?.champion && dayOf(t.reachedDates.champion) <= d) {
+        own.points += SCORING.roundBonus.champion;
+      }
     }
+    for (const k of PEOPLE_ORDER) { series[k].points.push(tot[k].points); series[k].goals.push(tot[k].goals); }
   }
   return { days, series };
 }
