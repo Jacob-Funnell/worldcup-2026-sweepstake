@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-20T10:53:02.072Z",
+  "generatedAt": "2026-06-20T11:29:25.116Z",
   "bracketDrawn": true,
   "tournamentOver": false,
   "leaderboard": [
@@ -71,7 +71,11 @@
           ],
           "reachedDates": {
             "r32": "2026-06-20T03:00Z"
-          }
+          },
+          "groupPts": 6,
+          "groupGd": 5,
+          "groupGf": 6,
+          "groupRank": 1
         },
         {
           "id": "206",
@@ -118,7 +122,11 @@
               "result": "W"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 4,
+          "groupGd": 6,
+          "groupGf": 7,
+          "groupRank": 1
         },
         {
           "id": "205",
@@ -165,7 +173,11 @@
               "result": "W"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 4,
+          "groupGd": 3,
+          "groupGf": 4,
+          "groupRank": 1
         },
         {
           "id": "464",
@@ -201,7 +213,11 @@
               "result": "W"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 3,
+          "groupGd": 3,
+          "groupGf": 4,
+          "groupRank": 1
         },
         {
           "id": "4789",
@@ -237,7 +253,11 @@
               "result": "W"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 3,
+          "groupGd": 1,
+          "groupGf": 1,
+          "groupRank": 2
         },
         {
           "id": "628",
@@ -284,7 +304,11 @@
               "result": "L"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 3,
+          "groupGd": 0,
+          "groupGf": 2,
+          "groupRank": 2
         },
         {
           "id": "627",
@@ -320,7 +344,11 @@
               "result": "D"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 1,
+          "groupGd": 0,
+          "groupGf": 2,
+          "groupRank": 2
         },
         {
           "id": "2666",
@@ -356,7 +384,11 @@
               "result": "D"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 1,
+          "groupGd": 0,
+          "groupGf": 2,
+          "groupRank": 1
         },
         {
           "id": "2620",
@@ -392,7 +424,11 @@
               "result": "D"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 1,
+          "groupGd": 0,
+          "groupGf": 1,
+          "groupRank": 4
         },
         {
           "id": "482",
@@ -428,7 +464,11 @@
               "result": "D"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 1,
+          "groupGd": 0,
+          "groupGf": 1,
+          "groupRank": 3
         },
         {
           "id": "2597",
@@ -464,7 +504,11 @@
               "result": "D"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 1,
+          "groupGd": 0,
+          "groupGf": 0,
+          "groupRank": 4
         },
         {
           "id": "467",
@@ -511,7 +555,11 @@
               "result": "D"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 1,
+          "groupGd": -2,
+          "groupGf": 1,
+          "groupRank": 4
         },
         {
           "id": "477",
@@ -547,7 +595,11 @@
               "result": "L"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 0,
+          "groupGd": -2,
+          "groupGf": 2,
+          "groupRank": 4
         },
         {
           "id": "2917",
@@ -583,7 +635,11 @@
               "result": "L"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 0,
+          "groupGd": -2,
+          "groupGf": 1,
+          "groupRank": 3
         },
         {
           "id": "624",
@@ -619,7 +675,11 @@
               "result": "L"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 0,
+          "groupGd": -3,
+          "groupGf": 0,
+          "groupRank": 4
         },
         {
           "id": "2654",
@@ -666,7 +726,11 @@
               "result": "L"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 0,
+          "groupGd": -4,
+          "groupGf": 0,
+          "groupRank": 4
         }
       ],
       "best": {
@@ -716,7 +780,11 @@
         ],
         "reachedDates": {
           "r32": "2026-06-20T03:00Z"
-        }
+        },
+        "groupPts": 6,
+        "groupGd": 5,
+        "groupGf": 6,
+        "groupRank": 1
       },
       "flop": {
         "id": "2654",
@@ -763,7 +831,11 @@
             "result": "L"
           }
         ],
-        "reachedDates": {}
+        "reachedDates": {},
+        "groupPts": 0,
+        "groupGd": -4,
+        "groupGf": 0,
+        "groupRank": 4
       },
       "rank": 1,
       "bootRank": 2
@@ -834,7 +906,11 @@
               "result": "W"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 4,
+          "groupGd": 3,
+          "groupGf": 5,
+          "groupRank": 2
         },
         {
           "id": "2869",
@@ -881,7 +957,11 @@
               "result": "W"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 4,
+          "groupGd": 1,
+          "groupGf": 2,
+          "groupRank": 2
         },
         {
           "id": "481",
@@ -917,7 +997,11 @@
               "result": "W"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 3,
+          "groupGd": 6,
+          "groupGf": 7,
+          "groupRank": 1
         },
         {
           "id": "448",
@@ -953,7 +1037,11 @@
               "result": "W"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 3,
+          "groupGd": 2,
+          "groupGf": 4,
+          "groupRank": 1
         },
         {
           "id": "474",
@@ -989,7 +1077,11 @@
               "result": "W"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 3,
+          "groupGd": 2,
+          "groupGf": 3,
+          "groupRank": 2
         },
         {
           "id": "208",
@@ -1025,7 +1117,11 @@
               "result": "W"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 3,
+          "groupGd": 2,
+          "groupGf": 3,
+          "groupRank": 1
         },
         {
           "id": "451",
@@ -1072,7 +1168,11 @@
               "result": "L"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 3,
+          "groupGd": 0,
+          "groupGf": 2,
+          "groupRank": 2
         },
         {
           "id": "210",
@@ -1119,7 +1219,11 @@
               "result": "W"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 3,
+          "groupGd": -2,
+          "groupGf": 2,
+          "groupRank": 3
         },
         {
           "id": "469",
@@ -1155,7 +1259,11 @@
               "result": "D"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 1,
+          "groupGd": 0,
+          "groupGf": 2,
+          "groupRank": 2
         },
         {
           "id": "2850",
@@ -1191,7 +1299,11 @@
               "result": "D"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 1,
+          "groupGd": 0,
+          "groupGf": 1,
+          "groupRank": 2
         },
         {
           "id": "212",
@@ -1227,7 +1339,11 @@
               "result": "D"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 1,
+          "groupGd": 0,
+          "groupGf": 1,
+          "groupRank": 1
         },
         {
           "id": "164",
@@ -1263,7 +1379,11 @@
               "result": "D"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 1,
+          "groupGd": 0,
+          "groupGf": 0,
+          "groupRank": 3
         },
         {
           "id": "450",
@@ -1310,7 +1430,11 @@
               "result": "D"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 1,
+          "groupGd": -1,
+          "groupGf": 2,
+          "groupRank": 3
         },
         {
           "id": "4375",
@@ -1346,7 +1470,11 @@
               "result": "L"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 0,
+          "groupGd": -3,
+          "groupGf": 1,
+          "groupRank": 4
         },
         {
           "id": "659",
@@ -1382,7 +1510,11 @@
               "result": "L"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 0,
+          "groupGd": -4,
+          "groupGf": 1,
+          "groupRank": 4
         },
         {
           "id": "11678",
@@ -1418,7 +1550,11 @@
               "result": "L"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 0,
+          "groupGd": -6,
+          "groupGf": 1,
+          "groupRank": 4
         }
       ],
       "best": {
@@ -1466,7 +1602,11 @@
             "result": "W"
           }
         ],
-        "reachedDates": {}
+        "reachedDates": {},
+        "groupPts": 4,
+        "groupGd": 3,
+        "groupGf": 5,
+        "groupRank": 2
       },
       "flop": null,
       "rank": 2,
@@ -1540,7 +1680,11 @@
           ],
           "reachedDates": {
             "r32": "2026-06-19T01:00Z"
-          }
+          },
+          "groupPts": 6,
+          "groupGd": 3,
+          "groupGf": 3,
+          "groupRank": 1
         },
         {
           "id": "466",
@@ -1576,7 +1720,11 @@
               "result": "W"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 3,
+          "groupGd": 4,
+          "groupGf": 5,
+          "groupRank": 1
         },
         {
           "id": "202",
@@ -1612,7 +1760,11 @@
               "result": "W"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 3,
+          "groupGd": 3,
+          "groupGf": 3,
+          "groupRank": 1
         },
         {
           "id": "478",
@@ -1648,7 +1800,11 @@
               "result": "W"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 3,
+          "groupGd": 2,
+          "groupGf": 3,
+          "groupRank": 2
         },
         {
           "id": "4469",
@@ -1684,7 +1840,11 @@
               "result": "W"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 3,
+          "groupGd": 1,
+          "groupGf": 1,
+          "groupRank": 2
         },
         {
           "id": "580",
@@ -1731,7 +1891,11 @@
               "result": "L"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 3,
+          "groupGd": 0,
+          "groupGf": 1,
+          "groupRank": 3
         },
         {
           "id": "449",
@@ -1767,7 +1931,11 @@
               "result": "D"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 1,
+          "groupGd": 0,
+          "groupGf": 2,
+          "groupRank": 3
         },
         {
           "id": "459",
@@ -1803,7 +1971,11 @@
               "result": "D"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 1,
+          "groupGd": 0,
+          "groupGf": 1,
+          "groupRank": 3
         },
         {
           "id": "655",
@@ -1839,7 +2011,11 @@
               "result": "D"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 1,
+          "groupGd": 0,
+          "groupGf": 1,
+          "groupRank": 2
         },
         {
           "id": "452",
@@ -1886,7 +2062,11 @@
               "result": "L"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 1,
+          "groupGd": -3,
+          "groupGf": 2,
+          "groupRank": 3
         },
         {
           "id": "4398",
@@ -1933,7 +2113,11 @@
               "result": "L"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 1,
+          "groupGd": -6,
+          "groupGf": 1,
+          "groupRank": 4
         },
         {
           "id": "209",
@@ -1969,7 +2153,11 @@
               "result": "L"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 0,
+          "groupGd": -1,
+          "groupGf": 0,
+          "groupRank": 3
         },
         {
           "id": "2659",
@@ -2005,7 +2193,11 @@
               "result": "L"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 0,
+          "groupGd": -1,
+          "groupGf": 0,
+          "groupRank": 3
         },
         {
           "id": "654",
@@ -2041,7 +2233,11 @@
               "result": "L"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 0,
+          "groupGd": -2,
+          "groupGf": 1,
+          "groupRank": 3
         },
         {
           "id": "2570",
@@ -2077,7 +2273,11 @@
               "result": "L"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 0,
+          "groupGd": -2,
+          "groupGf": 1,
+          "groupRank": 4
         },
         {
           "id": "465",
@@ -2124,7 +2324,11 @@
               "result": "L"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 0,
+          "groupGd": -3,
+          "groupGf": 0,
+          "groupRank": 4
         }
       ],
       "best": {
@@ -2174,7 +2378,11 @@
         ],
         "reachedDates": {
           "r32": "2026-06-19T01:00Z"
-        }
+        },
+        "groupPts": 6,
+        "groupGd": 3,
+        "groupGf": 3,
+        "groupRank": 1
       },
       "flop": {
         "id": "465",
@@ -2221,7 +2429,11 @@
             "result": "L"
           }
         ],
-        "reachedDates": {}
+        "reachedDates": {},
+        "groupPts": 0,
+        "groupGd": -3,
+        "groupGf": 0,
+        "groupRank": 4
       },
       "rank": 3,
       "bootRank": 3
@@ -2294,7 +2506,11 @@
               "result": "W"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 4,
+          "groupGd": 3,
+          "groupGf": 5,
+          "groupRank": 2
         },
         {
           "id": "2869",
@@ -2341,7 +2557,11 @@
               "result": "W"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 4,
+          "groupGd": 1,
+          "groupGf": 2,
+          "groupRank": 2
         },
         {
           "id": "481",
@@ -2377,7 +2597,11 @@
               "result": "W"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 3,
+          "groupGd": 6,
+          "groupGf": 7,
+          "groupRank": 1
         },
         {
           "id": "448",
@@ -2413,7 +2637,11 @@
               "result": "W"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 3,
+          "groupGd": 2,
+          "groupGf": 4,
+          "groupRank": 1
         },
         {
           "id": "474",
@@ -2449,7 +2677,11 @@
               "result": "W"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 3,
+          "groupGd": 2,
+          "groupGf": 3,
+          "groupRank": 2
         },
         {
           "id": "208",
@@ -2485,7 +2717,11 @@
               "result": "W"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 3,
+          "groupGd": 2,
+          "groupGf": 3,
+          "groupRank": 1
         },
         {
           "id": "451",
@@ -2532,7 +2768,11 @@
               "result": "L"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 3,
+          "groupGd": 0,
+          "groupGf": 2,
+          "groupRank": 2
         },
         {
           "id": "210",
@@ -2579,7 +2819,11 @@
               "result": "W"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 3,
+          "groupGd": -2,
+          "groupGf": 2,
+          "groupRank": 3
         },
         {
           "id": "469",
@@ -2615,7 +2859,11 @@
               "result": "D"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 1,
+          "groupGd": 0,
+          "groupGf": 2,
+          "groupRank": 2
         },
         {
           "id": "2850",
@@ -2651,7 +2899,11 @@
               "result": "D"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 1,
+          "groupGd": 0,
+          "groupGf": 1,
+          "groupRank": 2
         },
         {
           "id": "212",
@@ -2687,7 +2939,11 @@
               "result": "D"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 1,
+          "groupGd": 0,
+          "groupGf": 1,
+          "groupRank": 1
         },
         {
           "id": "164",
@@ -2723,7 +2979,11 @@
               "result": "D"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 1,
+          "groupGd": 0,
+          "groupGf": 0,
+          "groupRank": 3
         },
         {
           "id": "450",
@@ -2770,7 +3030,11 @@
               "result": "D"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 1,
+          "groupGd": -1,
+          "groupGf": 2,
+          "groupRank": 3
         },
         {
           "id": "4375",
@@ -2806,7 +3070,11 @@
               "result": "L"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 0,
+          "groupGd": -3,
+          "groupGf": 1,
+          "groupRank": 4
         },
         {
           "id": "659",
@@ -2842,7 +3110,11 @@
               "result": "L"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 0,
+          "groupGd": -4,
+          "groupGf": 1,
+          "groupRank": 4
         },
         {
           "id": "11678",
@@ -2878,7 +3150,11 @@
               "result": "L"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 0,
+          "groupGd": -6,
+          "groupGf": 1,
+          "groupRank": 4
         }
       ],
       "best": {
@@ -2926,7 +3202,11 @@
             "result": "W"
           }
         ],
-        "reachedDates": {}
+        "reachedDates": {},
+        "groupPts": 4,
+        "groupGd": 3,
+        "groupGf": 5,
+        "groupRank": 2
       },
       "flop": null,
       "rank": 2,
@@ -3000,7 +3280,11 @@
           ],
           "reachedDates": {
             "r32": "2026-06-20T03:00Z"
-          }
+          },
+          "groupPts": 6,
+          "groupGd": 5,
+          "groupGf": 6,
+          "groupRank": 1
         },
         {
           "id": "206",
@@ -3047,7 +3331,11 @@
               "result": "W"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 4,
+          "groupGd": 6,
+          "groupGf": 7,
+          "groupRank": 1
         },
         {
           "id": "205",
@@ -3094,7 +3382,11 @@
               "result": "W"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 4,
+          "groupGd": 3,
+          "groupGf": 4,
+          "groupRank": 1
         },
         {
           "id": "464",
@@ -3130,7 +3422,11 @@
               "result": "W"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 3,
+          "groupGd": 3,
+          "groupGf": 4,
+          "groupRank": 1
         },
         {
           "id": "4789",
@@ -3166,7 +3462,11 @@
               "result": "W"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 3,
+          "groupGd": 1,
+          "groupGf": 1,
+          "groupRank": 2
         },
         {
           "id": "628",
@@ -3213,7 +3513,11 @@
               "result": "L"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 3,
+          "groupGd": 0,
+          "groupGf": 2,
+          "groupRank": 2
         },
         {
           "id": "627",
@@ -3249,7 +3553,11 @@
               "result": "D"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 1,
+          "groupGd": 0,
+          "groupGf": 2,
+          "groupRank": 2
         },
         {
           "id": "2666",
@@ -3285,7 +3593,11 @@
               "result": "D"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 1,
+          "groupGd": 0,
+          "groupGf": 2,
+          "groupRank": 1
         },
         {
           "id": "2620",
@@ -3321,7 +3633,11 @@
               "result": "D"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 1,
+          "groupGd": 0,
+          "groupGf": 1,
+          "groupRank": 4
         },
         {
           "id": "482",
@@ -3357,7 +3673,11 @@
               "result": "D"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 1,
+          "groupGd": 0,
+          "groupGf": 1,
+          "groupRank": 3
         },
         {
           "id": "2597",
@@ -3393,7 +3713,11 @@
               "result": "D"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 1,
+          "groupGd": 0,
+          "groupGf": 0,
+          "groupRank": 4
         },
         {
           "id": "467",
@@ -3440,7 +3764,11 @@
               "result": "D"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 1,
+          "groupGd": -2,
+          "groupGf": 1,
+          "groupRank": 4
         },
         {
           "id": "477",
@@ -3476,7 +3804,11 @@
               "result": "L"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 0,
+          "groupGd": -2,
+          "groupGf": 2,
+          "groupRank": 4
         },
         {
           "id": "2917",
@@ -3512,7 +3844,11 @@
               "result": "L"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 0,
+          "groupGd": -2,
+          "groupGf": 1,
+          "groupRank": 3
         },
         {
           "id": "624",
@@ -3548,7 +3884,11 @@
               "result": "L"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 0,
+          "groupGd": -3,
+          "groupGf": 0,
+          "groupRank": 4
         },
         {
           "id": "2654",
@@ -3595,7 +3935,11 @@
               "result": "L"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 0,
+          "groupGd": -4,
+          "groupGf": 0,
+          "groupRank": 4
         }
       ],
       "best": {
@@ -3645,7 +3989,11 @@
         ],
         "reachedDates": {
           "r32": "2026-06-20T03:00Z"
-        }
+        },
+        "groupPts": 6,
+        "groupGd": 5,
+        "groupGf": 6,
+        "groupRank": 1
       },
       "flop": {
         "id": "2654",
@@ -3692,7 +4040,11 @@
             "result": "L"
           }
         ],
-        "reachedDates": {}
+        "reachedDates": {},
+        "groupPts": 0,
+        "groupGd": -4,
+        "groupGf": 0,
+        "groupRank": 4
       },
       "rank": 1,
       "bootRank": 2
@@ -3765,7 +4117,11 @@
           ],
           "reachedDates": {
             "r32": "2026-06-19T01:00Z"
-          }
+          },
+          "groupPts": 6,
+          "groupGd": 3,
+          "groupGf": 3,
+          "groupRank": 1
         },
         {
           "id": "466",
@@ -3801,7 +4157,11 @@
               "result": "W"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 3,
+          "groupGd": 4,
+          "groupGf": 5,
+          "groupRank": 1
         },
         {
           "id": "202",
@@ -3837,7 +4197,11 @@
               "result": "W"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 3,
+          "groupGd": 3,
+          "groupGf": 3,
+          "groupRank": 1
         },
         {
           "id": "478",
@@ -3873,7 +4237,11 @@
               "result": "W"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 3,
+          "groupGd": 2,
+          "groupGf": 3,
+          "groupRank": 2
         },
         {
           "id": "4469",
@@ -3909,7 +4277,11 @@
               "result": "W"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 3,
+          "groupGd": 1,
+          "groupGf": 1,
+          "groupRank": 2
         },
         {
           "id": "580",
@@ -3956,7 +4328,11 @@
               "result": "L"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 3,
+          "groupGd": 0,
+          "groupGf": 1,
+          "groupRank": 3
         },
         {
           "id": "449",
@@ -3992,7 +4368,11 @@
               "result": "D"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 1,
+          "groupGd": 0,
+          "groupGf": 2,
+          "groupRank": 3
         },
         {
           "id": "459",
@@ -4028,7 +4408,11 @@
               "result": "D"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 1,
+          "groupGd": 0,
+          "groupGf": 1,
+          "groupRank": 3
         },
         {
           "id": "655",
@@ -4064,7 +4448,11 @@
               "result": "D"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 1,
+          "groupGd": 0,
+          "groupGf": 1,
+          "groupRank": 2
         },
         {
           "id": "452",
@@ -4111,7 +4499,11 @@
               "result": "L"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 1,
+          "groupGd": -3,
+          "groupGf": 2,
+          "groupRank": 3
         },
         {
           "id": "4398",
@@ -4158,7 +4550,11 @@
               "result": "L"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 1,
+          "groupGd": -6,
+          "groupGf": 1,
+          "groupRank": 4
         },
         {
           "id": "209",
@@ -4194,7 +4590,11 @@
               "result": "L"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 0,
+          "groupGd": -1,
+          "groupGf": 0,
+          "groupRank": 3
         },
         {
           "id": "2659",
@@ -4230,7 +4630,11 @@
               "result": "L"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 0,
+          "groupGd": -1,
+          "groupGf": 0,
+          "groupRank": 3
         },
         {
           "id": "654",
@@ -4266,7 +4670,11 @@
               "result": "L"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 0,
+          "groupGd": -2,
+          "groupGf": 1,
+          "groupRank": 3
         },
         {
           "id": "2570",
@@ -4302,7 +4710,11 @@
               "result": "L"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 0,
+          "groupGd": -2,
+          "groupGf": 1,
+          "groupRank": 4
         },
         {
           "id": "465",
@@ -4349,7 +4761,11 @@
               "result": "L"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 0,
+          "groupGd": -3,
+          "groupGf": 0,
+          "groupRank": 4
         }
       ],
       "best": {
@@ -4399,7 +4815,11 @@
         ],
         "reachedDates": {
           "r32": "2026-06-19T01:00Z"
-        }
+        },
+        "groupPts": 6,
+        "groupGd": 3,
+        "groupGf": 3,
+        "groupRank": 1
       },
       "flop": {
         "id": "465",
@@ -4446,7 +4866,11 @@
             "result": "L"
           }
         ],
-        "reachedDates": {}
+        "reachedDates": {},
+        "groupPts": 0,
+        "groupGd": -3,
+        "groupGf": 0,
+        "groupRank": 4
       },
       "rank": 3,
       "bootRank": 3
@@ -4521,7 +4945,11 @@
           ],
           "reachedDates": {
             "r32": "2026-06-19T01:00Z"
-          }
+          },
+          "groupPts": 6,
+          "groupGd": 3,
+          "groupGf": 3,
+          "groupRank": 1
         },
         {
           "id": "466",
@@ -4557,7 +4985,11 @@
               "result": "W"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 3,
+          "groupGd": 4,
+          "groupGf": 5,
+          "groupRank": 1
         },
         {
           "id": "202",
@@ -4593,7 +5025,11 @@
               "result": "W"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 3,
+          "groupGd": 3,
+          "groupGf": 3,
+          "groupRank": 1
         },
         {
           "id": "478",
@@ -4629,7 +5065,11 @@
               "result": "W"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 3,
+          "groupGd": 2,
+          "groupGf": 3,
+          "groupRank": 2
         },
         {
           "id": "4469",
@@ -4665,7 +5105,11 @@
               "result": "W"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 3,
+          "groupGd": 1,
+          "groupGf": 1,
+          "groupRank": 2
         },
         {
           "id": "580",
@@ -4712,7 +5156,11 @@
               "result": "L"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 3,
+          "groupGd": 0,
+          "groupGf": 1,
+          "groupRank": 3
         },
         {
           "id": "449",
@@ -4748,7 +5196,11 @@
               "result": "D"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 1,
+          "groupGd": 0,
+          "groupGf": 2,
+          "groupRank": 3
         },
         {
           "id": "459",
@@ -4784,7 +5236,11 @@
               "result": "D"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 1,
+          "groupGd": 0,
+          "groupGf": 1,
+          "groupRank": 3
         },
         {
           "id": "655",
@@ -4820,7 +5276,11 @@
               "result": "D"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 1,
+          "groupGd": 0,
+          "groupGf": 1,
+          "groupRank": 2
         },
         {
           "id": "452",
@@ -4867,7 +5327,11 @@
               "result": "L"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 1,
+          "groupGd": -3,
+          "groupGf": 2,
+          "groupRank": 3
         },
         {
           "id": "4398",
@@ -4914,7 +5378,11 @@
               "result": "L"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 1,
+          "groupGd": -6,
+          "groupGf": 1,
+          "groupRank": 4
         },
         {
           "id": "209",
@@ -4950,7 +5418,11 @@
               "result": "L"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 0,
+          "groupGd": -1,
+          "groupGf": 0,
+          "groupRank": 3
         },
         {
           "id": "2659",
@@ -4986,7 +5458,11 @@
               "result": "L"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 0,
+          "groupGd": -1,
+          "groupGf": 0,
+          "groupRank": 3
         },
         {
           "id": "654",
@@ -5022,7 +5498,11 @@
               "result": "L"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 0,
+          "groupGd": -2,
+          "groupGf": 1,
+          "groupRank": 3
         },
         {
           "id": "2570",
@@ -5058,7 +5538,11 @@
               "result": "L"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 0,
+          "groupGd": -2,
+          "groupGf": 1,
+          "groupRank": 4
         },
         {
           "id": "465",
@@ -5105,7 +5589,11 @@
               "result": "L"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 0,
+          "groupGd": -3,
+          "groupGf": 0,
+          "groupRank": 4
         }
       ],
       "best": {
@@ -5155,7 +5643,11 @@
         ],
         "reachedDates": {
           "r32": "2026-06-19T01:00Z"
-        }
+        },
+        "groupPts": 6,
+        "groupGd": 3,
+        "groupGf": 3,
+        "groupRank": 1
       },
       "flop": {
         "id": "465",
@@ -5202,7 +5694,11 @@
             "result": "L"
           }
         ],
-        "reachedDates": {}
+        "reachedDates": {},
+        "groupPts": 0,
+        "groupGd": -3,
+        "groupGf": 0,
+        "groupRank": 4
       },
       "rank": 3,
       "bootRank": 3
@@ -5273,7 +5769,11 @@
               "result": "W"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 4,
+          "groupGd": 3,
+          "groupGf": 5,
+          "groupRank": 2
         },
         {
           "id": "2869",
@@ -5320,7 +5820,11 @@
               "result": "W"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 4,
+          "groupGd": 1,
+          "groupGf": 2,
+          "groupRank": 2
         },
         {
           "id": "481",
@@ -5356,7 +5860,11 @@
               "result": "W"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 3,
+          "groupGd": 6,
+          "groupGf": 7,
+          "groupRank": 1
         },
         {
           "id": "448",
@@ -5392,7 +5900,11 @@
               "result": "W"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 3,
+          "groupGd": 2,
+          "groupGf": 4,
+          "groupRank": 1
         },
         {
           "id": "474",
@@ -5428,7 +5940,11 @@
               "result": "W"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 3,
+          "groupGd": 2,
+          "groupGf": 3,
+          "groupRank": 2
         },
         {
           "id": "208",
@@ -5464,7 +5980,11 @@
               "result": "W"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 3,
+          "groupGd": 2,
+          "groupGf": 3,
+          "groupRank": 1
         },
         {
           "id": "451",
@@ -5511,7 +6031,11 @@
               "result": "L"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 3,
+          "groupGd": 0,
+          "groupGf": 2,
+          "groupRank": 2
         },
         {
           "id": "210",
@@ -5558,7 +6082,11 @@
               "result": "W"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 3,
+          "groupGd": -2,
+          "groupGf": 2,
+          "groupRank": 3
         },
         {
           "id": "469",
@@ -5594,7 +6122,11 @@
               "result": "D"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 1,
+          "groupGd": 0,
+          "groupGf": 2,
+          "groupRank": 2
         },
         {
           "id": "2850",
@@ -5630,7 +6162,11 @@
               "result": "D"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 1,
+          "groupGd": 0,
+          "groupGf": 1,
+          "groupRank": 2
         },
         {
           "id": "212",
@@ -5666,7 +6202,11 @@
               "result": "D"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 1,
+          "groupGd": 0,
+          "groupGf": 1,
+          "groupRank": 1
         },
         {
           "id": "164",
@@ -5702,7 +6242,11 @@
               "result": "D"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 1,
+          "groupGd": 0,
+          "groupGf": 0,
+          "groupRank": 3
         },
         {
           "id": "450",
@@ -5749,7 +6293,11 @@
               "result": "D"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 1,
+          "groupGd": -1,
+          "groupGf": 2,
+          "groupRank": 3
         },
         {
           "id": "4375",
@@ -5785,7 +6333,11 @@
               "result": "L"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 0,
+          "groupGd": -3,
+          "groupGf": 1,
+          "groupRank": 4
         },
         {
           "id": "659",
@@ -5821,7 +6373,11 @@
               "result": "L"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 0,
+          "groupGd": -4,
+          "groupGf": 1,
+          "groupRank": 4
         },
         {
           "id": "11678",
@@ -5857,7 +6413,11 @@
               "result": "L"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 0,
+          "groupGd": -6,
+          "groupGf": 1,
+          "groupRank": 4
         }
       ],
       "best": {
@@ -5905,7 +6465,11 @@
             "result": "W"
           }
         ],
-        "reachedDates": {}
+        "reachedDates": {},
+        "groupPts": 4,
+        "groupGd": 3,
+        "groupGf": 5,
+        "groupRank": 2
       },
       "flop": null,
       "rank": 2,
@@ -5979,7 +6543,11 @@
           ],
           "reachedDates": {
             "r32": "2026-06-20T03:00Z"
-          }
+          },
+          "groupPts": 6,
+          "groupGd": 5,
+          "groupGf": 6,
+          "groupRank": 1
         },
         {
           "id": "206",
@@ -6026,7 +6594,11 @@
               "result": "W"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 4,
+          "groupGd": 6,
+          "groupGf": 7,
+          "groupRank": 1
         },
         {
           "id": "205",
@@ -6073,7 +6645,11 @@
               "result": "W"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 4,
+          "groupGd": 3,
+          "groupGf": 4,
+          "groupRank": 1
         },
         {
           "id": "464",
@@ -6109,7 +6685,11 @@
               "result": "W"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 3,
+          "groupGd": 3,
+          "groupGf": 4,
+          "groupRank": 1
         },
         {
           "id": "4789",
@@ -6145,7 +6725,11 @@
               "result": "W"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 3,
+          "groupGd": 1,
+          "groupGf": 1,
+          "groupRank": 2
         },
         {
           "id": "628",
@@ -6192,7 +6776,11 @@
               "result": "L"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 3,
+          "groupGd": 0,
+          "groupGf": 2,
+          "groupRank": 2
         },
         {
           "id": "627",
@@ -6228,7 +6816,11 @@
               "result": "D"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 1,
+          "groupGd": 0,
+          "groupGf": 2,
+          "groupRank": 2
         },
         {
           "id": "2666",
@@ -6264,7 +6856,11 @@
               "result": "D"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 1,
+          "groupGd": 0,
+          "groupGf": 2,
+          "groupRank": 1
         },
         {
           "id": "2620",
@@ -6300,7 +6896,11 @@
               "result": "D"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 1,
+          "groupGd": 0,
+          "groupGf": 1,
+          "groupRank": 4
         },
         {
           "id": "482",
@@ -6336,7 +6936,11 @@
               "result": "D"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 1,
+          "groupGd": 0,
+          "groupGf": 1,
+          "groupRank": 3
         },
         {
           "id": "2597",
@@ -6372,7 +6976,11 @@
               "result": "D"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 1,
+          "groupGd": 0,
+          "groupGf": 0,
+          "groupRank": 4
         },
         {
           "id": "467",
@@ -6419,7 +7027,11 @@
               "result": "D"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 1,
+          "groupGd": -2,
+          "groupGf": 1,
+          "groupRank": 4
         },
         {
           "id": "477",
@@ -6455,7 +7067,11 @@
               "result": "L"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 0,
+          "groupGd": -2,
+          "groupGf": 2,
+          "groupRank": 4
         },
         {
           "id": "2917",
@@ -6491,7 +7107,11 @@
               "result": "L"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 0,
+          "groupGd": -2,
+          "groupGf": 1,
+          "groupRank": 3
         },
         {
           "id": "624",
@@ -6527,7 +7147,11 @@
               "result": "L"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 0,
+          "groupGd": -3,
+          "groupGf": 0,
+          "groupRank": 4
         },
         {
           "id": "2654",
@@ -6574,7 +7198,11 @@
               "result": "L"
             }
           ],
-          "reachedDates": {}
+          "reachedDates": {},
+          "groupPts": 0,
+          "groupGd": -4,
+          "groupGf": 0,
+          "groupRank": 4
         }
       ],
       "best": {
@@ -6624,7 +7252,11 @@
         ],
         "reachedDates": {
           "r32": "2026-06-20T03:00Z"
-        }
+        },
+        "groupPts": 6,
+        "groupGd": 5,
+        "groupGf": 6,
+        "groupRank": 1
       },
       "flop": {
         "id": "2654",
@@ -6671,7 +7303,11 @@
             "result": "L"
           }
         ],
-        "reachedDates": {}
+        "reachedDates": {},
+        "groupPts": 0,
+        "groupGd": -4,
+        "groupGf": 0,
+        "groupRank": 4
       },
       "rank": 1,
       "bootRank": 2
@@ -6725,7 +7361,11 @@
       ],
       "reachedDates": {
         "r32": "2026-06-20T03:00Z"
-      }
+      },
+      "groupPts": 6,
+      "groupGd": 5,
+      "groupGf": 6,
+      "groupRank": 1
     },
     {
       "id": "203",
@@ -6774,7 +7414,11 @@
       ],
       "reachedDates": {
         "r32": "2026-06-19T01:00Z"
-      }
+      },
+      "groupPts": 6,
+      "groupGd": 3,
+      "groupGf": 3,
+      "groupRank": 1
     },
     {
       "id": "206",
@@ -6821,7 +7465,11 @@
           "result": "W"
         }
       ],
-      "reachedDates": {}
+      "reachedDates": {},
+      "groupPts": 4,
+      "groupGd": 6,
+      "groupGf": 7,
+      "groupRank": 1
     },
     {
       "id": "475",
@@ -6868,7 +7516,11 @@
           "result": "W"
         }
       ],
-      "reachedDates": {}
+      "reachedDates": {},
+      "groupPts": 4,
+      "groupGd": 3,
+      "groupGf": 5,
+      "groupRank": 2
     },
     {
       "id": "205",
@@ -6915,7 +7567,11 @@
           "result": "W"
         }
       ],
-      "reachedDates": {}
+      "reachedDates": {},
+      "groupPts": 4,
+      "groupGd": 3,
+      "groupGf": 4,
+      "groupRank": 1
     },
     {
       "id": "2869",
@@ -6962,7 +7618,11 @@
           "result": "W"
         }
       ],
-      "reachedDates": {}
+      "reachedDates": {},
+      "groupPts": 4,
+      "groupGd": 1,
+      "groupGf": 2,
+      "groupRank": 2
     },
     {
       "id": "481",
@@ -6998,7 +7658,11 @@
           "result": "W"
         }
       ],
-      "reachedDates": {}
+      "reachedDates": {},
+      "groupPts": 3,
+      "groupGd": 6,
+      "groupGf": 7,
+      "groupRank": 1
     },
     {
       "id": "466",
@@ -7034,7 +7698,11 @@
           "result": "W"
         }
       ],
-      "reachedDates": {}
+      "reachedDates": {},
+      "groupPts": 3,
+      "groupGd": 4,
+      "groupGf": 5,
+      "groupRank": 1
     },
     {
       "id": "464",
@@ -7070,7 +7738,11 @@
           "result": "W"
         }
       ],
-      "reachedDates": {}
+      "reachedDates": {},
+      "groupPts": 3,
+      "groupGd": 3,
+      "groupGf": 4,
+      "groupRank": 1
     },
     {
       "id": "202",
@@ -7106,7 +7778,11 @@
           "result": "W"
         }
       ],
-      "reachedDates": {}
+      "reachedDates": {},
+      "groupPts": 3,
+      "groupGd": 3,
+      "groupGf": 3,
+      "groupRank": 1
     },
     {
       "id": "448",
@@ -7142,7 +7818,11 @@
           "result": "W"
         }
       ],
-      "reachedDates": {}
+      "reachedDates": {},
+      "groupPts": 3,
+      "groupGd": 2,
+      "groupGf": 4,
+      "groupRank": 1
     },
     {
       "id": "474",
@@ -7178,7 +7858,11 @@
           "result": "W"
         }
       ],
-      "reachedDates": {}
+      "reachedDates": {},
+      "groupPts": 3,
+      "groupGd": 2,
+      "groupGf": 3,
+      "groupRank": 2
     },
     {
       "id": "208",
@@ -7214,7 +7898,11 @@
           "result": "W"
         }
       ],
-      "reachedDates": {}
+      "reachedDates": {},
+      "groupPts": 3,
+      "groupGd": 2,
+      "groupGf": 3,
+      "groupRank": 1
     },
     {
       "id": "478",
@@ -7250,7 +7938,11 @@
           "result": "W"
         }
       ],
-      "reachedDates": {}
+      "reachedDates": {},
+      "groupPts": 3,
+      "groupGd": 2,
+      "groupGf": 3,
+      "groupRank": 2
     },
     {
       "id": "4469",
@@ -7286,7 +7978,11 @@
           "result": "W"
         }
       ],
-      "reachedDates": {}
+      "reachedDates": {},
+      "groupPts": 3,
+      "groupGd": 1,
+      "groupGf": 1,
+      "groupRank": 2
     },
     {
       "id": "4789",
@@ -7322,7 +8018,11 @@
           "result": "W"
         }
       ],
-      "reachedDates": {}
+      "reachedDates": {},
+      "groupPts": 3,
+      "groupGd": 1,
+      "groupGf": 1,
+      "groupRank": 2
     },
     {
       "id": "628",
@@ -7369,7 +8069,11 @@
           "result": "L"
         }
       ],
-      "reachedDates": {}
+      "reachedDates": {},
+      "groupPts": 3,
+      "groupGd": 0,
+      "groupGf": 2,
+      "groupRank": 2
     },
     {
       "id": "451",
@@ -7416,7 +8120,11 @@
           "result": "L"
         }
       ],
-      "reachedDates": {}
+      "reachedDates": {},
+      "groupPts": 3,
+      "groupGd": 0,
+      "groupGf": 2,
+      "groupRank": 2
     },
     {
       "id": "580",
@@ -7463,7 +8171,11 @@
           "result": "L"
         }
       ],
-      "reachedDates": {}
+      "reachedDates": {},
+      "groupPts": 3,
+      "groupGd": 0,
+      "groupGf": 1,
+      "groupRank": 3
     },
     {
       "id": "210",
@@ -7510,7 +8222,11 @@
           "result": "W"
         }
       ],
-      "reachedDates": {}
+      "reachedDates": {},
+      "groupPts": 3,
+      "groupGd": -2,
+      "groupGf": 2,
+      "groupRank": 3
     },
     {
       "id": "469",
@@ -7546,7 +8262,11 @@
           "result": "D"
         }
       ],
-      "reachedDates": {}
+      "reachedDates": {},
+      "groupPts": 1,
+      "groupGd": 0,
+      "groupGf": 2,
+      "groupRank": 2
     },
     {
       "id": "627",
@@ -7582,7 +8302,11 @@
           "result": "D"
         }
       ],
-      "reachedDates": {}
+      "reachedDates": {},
+      "groupPts": 1,
+      "groupGd": 0,
+      "groupGf": 2,
+      "groupRank": 2
     },
     {
       "id": "449",
@@ -7618,7 +8342,11 @@
           "result": "D"
         }
       ],
-      "reachedDates": {}
+      "reachedDates": {},
+      "groupPts": 1,
+      "groupGd": 0,
+      "groupGf": 2,
+      "groupRank": 3
     },
     {
       "id": "2666",
@@ -7654,7 +8382,11 @@
           "result": "D"
         }
       ],
-      "reachedDates": {}
+      "reachedDates": {},
+      "groupPts": 1,
+      "groupGd": 0,
+      "groupGf": 2,
+      "groupRank": 1
     },
     {
       "id": "459",
@@ -7690,7 +8422,11 @@
           "result": "D"
         }
       ],
-      "reachedDates": {}
+      "reachedDates": {},
+      "groupPts": 1,
+      "groupGd": 0,
+      "groupGf": 1,
+      "groupRank": 3
     },
     {
       "id": "2850",
@@ -7726,7 +8462,11 @@
           "result": "D"
         }
       ],
-      "reachedDates": {}
+      "reachedDates": {},
+      "groupPts": 1,
+      "groupGd": 0,
+      "groupGf": 1,
+      "groupRank": 2
     },
     {
       "id": "2620",
@@ -7762,7 +8502,11 @@
           "result": "D"
         }
       ],
-      "reachedDates": {}
+      "reachedDates": {},
+      "groupPts": 1,
+      "groupGd": 0,
+      "groupGf": 1,
+      "groupRank": 4
     },
     {
       "id": "482",
@@ -7798,7 +8542,11 @@
           "result": "D"
         }
       ],
-      "reachedDates": {}
+      "reachedDates": {},
+      "groupPts": 1,
+      "groupGd": 0,
+      "groupGf": 1,
+      "groupRank": 3
     },
     {
       "id": "655",
@@ -7834,7 +8582,11 @@
           "result": "D"
         }
       ],
-      "reachedDates": {}
+      "reachedDates": {},
+      "groupPts": 1,
+      "groupGd": 0,
+      "groupGf": 1,
+      "groupRank": 2
     },
     {
       "id": "212",
@@ -7870,7 +8622,11 @@
           "result": "D"
         }
       ],
-      "reachedDates": {}
+      "reachedDates": {},
+      "groupPts": 1,
+      "groupGd": 0,
+      "groupGf": 1,
+      "groupRank": 1
     },
     {
       "id": "2597",
@@ -7906,7 +8662,11 @@
           "result": "D"
         }
       ],
-      "reachedDates": {}
+      "reachedDates": {},
+      "groupPts": 1,
+      "groupGd": 0,
+      "groupGf": 0,
+      "groupRank": 4
     },
     {
       "id": "164",
@@ -7942,7 +8702,11 @@
           "result": "D"
         }
       ],
-      "reachedDates": {}
+      "reachedDates": {},
+      "groupPts": 1,
+      "groupGd": 0,
+      "groupGf": 0,
+      "groupRank": 3
     },
     {
       "id": "450",
@@ -7989,7 +8753,11 @@
           "result": "D"
         }
       ],
-      "reachedDates": {}
+      "reachedDates": {},
+      "groupPts": 1,
+      "groupGd": -1,
+      "groupGf": 2,
+      "groupRank": 3
     },
     {
       "id": "467",
@@ -8036,7 +8804,11 @@
           "result": "D"
         }
       ],
-      "reachedDates": {}
+      "reachedDates": {},
+      "groupPts": 1,
+      "groupGd": -2,
+      "groupGf": 1,
+      "groupRank": 4
     },
     {
       "id": "452",
@@ -8083,7 +8855,11 @@
           "result": "L"
         }
       ],
-      "reachedDates": {}
+      "reachedDates": {},
+      "groupPts": 1,
+      "groupGd": -3,
+      "groupGf": 2,
+      "groupRank": 3
     },
     {
       "id": "4398",
@@ -8130,7 +8906,11 @@
           "result": "L"
         }
       ],
-      "reachedDates": {}
+      "reachedDates": {},
+      "groupPts": 1,
+      "groupGd": -6,
+      "groupGf": 1,
+      "groupRank": 4
     },
     {
       "id": "209",
@@ -8166,7 +8946,11 @@
           "result": "L"
         }
       ],
-      "reachedDates": {}
+      "reachedDates": {},
+      "groupPts": 0,
+      "groupGd": -1,
+      "groupGf": 0,
+      "groupRank": 3
     },
     {
       "id": "2659",
@@ -8202,7 +8986,11 @@
           "result": "L"
         }
       ],
-      "reachedDates": {}
+      "reachedDates": {},
+      "groupPts": 0,
+      "groupGd": -1,
+      "groupGf": 0,
+      "groupRank": 3
     },
     {
       "id": "477",
@@ -8238,7 +9026,11 @@
           "result": "L"
         }
       ],
-      "reachedDates": {}
+      "reachedDates": {},
+      "groupPts": 0,
+      "groupGd": -2,
+      "groupGf": 2,
+      "groupRank": 4
     },
     {
       "id": "2917",
@@ -8274,7 +9066,11 @@
           "result": "L"
         }
       ],
-      "reachedDates": {}
+      "reachedDates": {},
+      "groupPts": 0,
+      "groupGd": -2,
+      "groupGf": 1,
+      "groupRank": 3
     },
     {
       "id": "654",
@@ -8310,7 +9106,11 @@
           "result": "L"
         }
       ],
-      "reachedDates": {}
+      "reachedDates": {},
+      "groupPts": 0,
+      "groupGd": -2,
+      "groupGf": 1,
+      "groupRank": 3
     },
     {
       "id": "2570",
@@ -8346,7 +9146,11 @@
           "result": "L"
         }
       ],
-      "reachedDates": {}
+      "reachedDates": {},
+      "groupPts": 0,
+      "groupGd": -2,
+      "groupGf": 1,
+      "groupRank": 4
     },
     {
       "id": "4375",
@@ -8382,7 +9186,11 @@
           "result": "L"
         }
       ],
-      "reachedDates": {}
+      "reachedDates": {},
+      "groupPts": 0,
+      "groupGd": -3,
+      "groupGf": 1,
+      "groupRank": 4
     },
     {
       "id": "624",
@@ -8418,7 +9226,11 @@
           "result": "L"
         }
       ],
-      "reachedDates": {}
+      "reachedDates": {},
+      "groupPts": 0,
+      "groupGd": -3,
+      "groupGf": 0,
+      "groupRank": 4
     },
     {
       "id": "465",
@@ -8465,7 +9277,11 @@
           "result": "L"
         }
       ],
-      "reachedDates": {}
+      "reachedDates": {},
+      "groupPts": 0,
+      "groupGd": -3,
+      "groupGf": 0,
+      "groupRank": 4
     },
     {
       "id": "659",
@@ -8501,7 +9317,11 @@
           "result": "L"
         }
       ],
-      "reachedDates": {}
+      "reachedDates": {},
+      "groupPts": 0,
+      "groupGd": -4,
+      "groupGf": 1,
+      "groupRank": 4
     },
     {
       "id": "2654",
@@ -8548,7 +9368,11 @@
           "result": "L"
         }
       ],
-      "reachedDates": {}
+      "reachedDates": {},
+      "groupPts": 0,
+      "groupGd": -4,
+      "groupGf": 0,
+      "groupRank": 4
     },
     {
       "id": "11678",
@@ -8584,7 +9408,11 @@
           "result": "L"
         }
       ],
-      "reachedDates": {}
+      "reachedDates": {},
+      "groupPts": 0,
+      "groupGd": -6,
+      "groupGf": 1,
+      "groupRank": 4
     }
   ],
   "stats": {
@@ -8635,7 +9463,11 @@
       ],
       "reachedDates": {
         "r32": "2026-06-20T03:00Z"
-      }
+      },
+      "groupPts": 6,
+      "groupGd": 5,
+      "groupGf": 6,
+      "groupRank": 1
     },
     "topScorerTeam": {
       "id": "206",
@@ -8682,7 +9514,11 @@
           "result": "W"
         }
       ],
-      "reachedDates": {}
+      "reachedDates": {},
+      "groupPts": 4,
+      "groupGd": 6,
+      "groupGf": 7,
+      "groupRank": 1
     },
     "biggestFlop": {
       "id": "2654",
@@ -8729,7 +9565,11 @@
           "result": "L"
         }
       ],
-      "reachedDates": {}
+      "reachedDates": {},
+      "groupPts": 0,
+      "groupGd": -4,
+      "groupGf": 0,
+      "groupRank": 4
     },
     "matchesPlayed": 32,
     "matchesLive": 0,
@@ -8912,6 +9752,6 @@
       }
     ]
   },
-  "fetchedAt": "2026-06-20T10:53:02.068Z",
+  "fetchedAt": "2026-06-20T11:29:25.109Z",
   "dateLondon": "2026-06-20"
 }

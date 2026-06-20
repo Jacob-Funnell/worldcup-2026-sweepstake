@@ -85,13 +85,28 @@ export function compute(matches, standings = {}) {
   const bracketDrawn = reachedKO.r32.size > 0;
   const bracketFull = reachedKO.r32.size >= 32;
 
-  // Knocked out of qualification contention: a team that can NO LONGER finish in
-  // the top 2 of its group. Computed by enumerating every win/draw/loss outcome
-  // of the group's remaining games — a team is out if there is no outcome leaving
-  // ≤1 team strictly above it. (Ties resolve in the team's favour, so this is the
-  // correct "can it still reach the top two" question, accounting for the actual
-  // remaining fixtures.) A team that later sneaks through as a best-third gets
-  // overridden to "through" by ESPN's advanced flag / the knockout bracket below.
+  // Group-stage standings, ranked with the real FIFA 2026 tiebreakers
+  // (points → head-to-head → overall GD → overall goals). Used for the group
+  // tables and for the elimination check below.
+  const gStats = groupStatsOf(byId, matches);
+  const groupTeams = {};
+  for (const t of byId.values()) (groupTeams[t.group] ||= []).push(t.id);
+  const groupRank = {};
+  for (const g in groupTeams) {
+    rankGroupOrder(groupTeams[g], gStats, matches).forEach((id, i) => { groupRank[id] = i + 1; });
+  }
+  // Prefer ESPN's official rank where present — it already applies every
+  // tiebreaker (head-to-head, GD, goals, AND the fair-play / FIFA-ranking ones
+  // that aren't in the feed). Our computed head-to-head order is the fallback.
+  for (const id in groupRank) {
+    if (standings[id]?.rank != null) groupRank[id] = standings[id].rank;
+  }
+
+  // Knocked out of contention: a team that can NO LONGER finish in the top 2 of
+  // its group. Enumerates every win/draw/loss outcome of the remaining group
+  // fixtures and resolves points-ties by head-to-head — a team is out if no
+  // outcome leaves ≤1 team above it. A team that still nicks a best-third place
+  // is overridden to "through" by ESPN's advanced flag / the bracket below.
   const top2Out = top2EliminatedSet(byId, matches);
 
   // When did each group finish? (latest completed group match) — used to date a
@@ -135,12 +150,14 @@ export function compute(matches, standings = {}) {
     const total = t.matchPoints + t.bonusPoints;
     const furthest = furthestRound(t.reached, t.champion);
     const status = teamStatus(t, matches, standings, reachedKO, bracketFull, top2Out);
+    const gs = gStats[t.id] || { pts: 0, gd: 0, gf: 0 };
     teams.push({
       id: t.id, name: t.name, abbr: t.abbr, group: t.group, owner: t.owner, flag: t.flag,
       played: t.played, wins: t.wins, draws: t.draws, losses: t.losses,
       gf: t.gf, ga: t.ga, gd, matchPoints: t.matchPoints, bonusPoints: t.bonusPoints,
       total, furthest, furthestLabel: ROUND_META[furthest]?.label || 'Group stage',
       champion: t.champion, status, matches: t.matches, reachedDates: reachDatesFor(t),
+      groupPts: gs.pts, groupGd: gs.gd, groupGf: gs.gf, groupRank: groupRank[t.id] || 0,
     });
   }
   teams.sort((a, b) => b.total - a.total || b.gd - a.gd || b.gf - a.gf || a.name.localeCompare(b.name));
@@ -319,39 +336,115 @@ function teamStatus(t, matches, standings, reachedKO, bracketFull, top2Out) {
 
 export const isOut = (status) => status === 'out';
 
-// The set of team ids that can no longer finish in the top 2 of their group.
-// Enumerates win/draw/loss for every remaining group fixture (≤3^6 per group)
-// and asks: is there ANY outcome leaving this team with ≤1 team above it?
-function top2EliminatedSet(byId, matches) {
-  const groupPts = {};
-  for (const t of byId.values()) groupPts[t.id] = 0;
+// Overall group-stage stats (from completed group matches only).
+function groupStatsOf(byId, matches) {
+  const s = {};
+  for (const t of byId.values()) s[t.id] = { pts: 0, gf: 0, ga: 0, gd: 0, name: t.name };
   for (const m of matches) {
     if (m.round !== 'group' || m.state !== 'post') continue;
     const hs = m.home.score, as = m.away.score;
     if (hs == null || as == null) continue;
-    if (byId.has(m.home.id)) groupPts[m.home.id] += hs > as ? 3 : hs === as ? 1 : 0;
-    if (byId.has(m.away.id)) groupPts[m.away.id] += as > hs ? 3 : as === hs ? 1 : 0;
+    if (byId.has(m.home.id)) { const r = s[m.home.id]; r.gf += hs; r.ga += as; r.gd += hs - as; r.pts += hs > as ? 3 : hs === as ? 1 : 0; }
+    if (byId.has(m.away.id)) { const r = s[m.away.id]; r.gf += as; r.ga += hs; r.gd += as - hs; r.pts += as > hs ? 3 : as === hs ? 1 : 0; }
   }
-  const remaining = {}, groupTeams = {};
+  return s;
+}
+
+// Head-to-head points/GD/goals among a SET of teams (their completed mutual
+// group matches only).
+function h2hAmong(ids, matches) {
+  const set = new Set(ids);
+  const rec = {};
+  for (const id of ids) rec[id] = { pts: 0, gd: 0, gf: 0 };
+  for (const m of matches) {
+    if (m.round !== 'group' || m.state !== 'post') continue;
+    if (!set.has(m.home.id) || !set.has(m.away.id)) continue;
+    const hs = m.home.score, as = m.away.score;
+    if (hs == null || as == null) continue;
+    rec[m.home.id].gf += hs; rec[m.home.id].gd += hs - as;
+    rec[m.away.id].gf += as; rec[m.away.id].gd += as - hs;
+    if (hs > as) rec[m.home.id].pts += 3; else if (hs < as) rec[m.away.id].pts += 3;
+    else { rec[m.home.id].pts += 1; rec[m.away.id].pts += 1; }
+  }
+  return rec;
+}
+
+// Rank a group's teams using the FIFA 2026 order: points → head-to-head
+// (points, GD, goals among teams level on points) → overall GD → overall goals.
+// (Disciplinary + FIFA-ranking tiebreakers aren't in the feed; name breaks any
+// remaining tie deterministically.)
+function rankGroupOrder(ids, stat, matches) {
+  const arr = [...ids].sort((a, b) => stat[b].pts - stat[a].pts);
+  const ordered = [];
+  let i = 0;
+  while (i < arr.length) {
+    let j = i;
+    while (j < arr.length && stat[arr[j]].pts === stat[arr[i]].pts) j++;
+    const block = arr.slice(i, j);
+    if (block.length > 1) {
+      const h = h2hAmong(block, matches);
+      block.sort((a, b) =>
+        (h[b].pts - h[a].pts) || (h[b].gd - h[a].gd) || (h[b].gf - h[a].gf) ||
+        (stat[b].gd - stat[a].gd) || (stat[b].gf - stat[a].gf) ||
+        stat[a].name.localeCompare(stat[b].name));
+    }
+    ordered.push(...block);
+    i = j;
+  }
+  return ordered;
+}
+
+// The set of team ids that can no longer finish in the top 2 of their group.
+// Enumerates win/draw/loss for every remaining group fixture and, when teams end
+// level on points, resolves by HEAD-TO-HEAD points (the 2026 rule), staying
+// optimistic on the goal-based sub-tiebreakers so we never falsely eliminate.
+function top2EliminatedSet(byId, matches) {
+  const groupTeams = {}, groupGames = {};
   for (const t of byId.values()) (groupTeams[t.group] ||= []).push(t.id);
   for (const m of matches) {
-    if (m.round !== 'group' || m.state === 'post') continue;        // not yet decided
+    if (m.round !== 'group') continue;
     if (!byId.has(m.home.id) || !byId.has(m.away.id)) continue;
-    (remaining[byId.get(m.home.id).group] ||= []).push([m.home.id, m.away.id]);
+    (groupGames[byId.get(m.home.id).group] ||= []).push(m);
   }
+  const done = (m) => m.state === 'post' && m.home.score != null && m.away.score != null;
   const out = new Set();
   for (const g in groupTeams) {
-    const ids = groupTeams[g], games = remaining[g] || [], R = games.length, combos = 3 ** R;
+    const ids = groupTeams[g], games = groupGames[g] || [];
+    const played = games.filter(done), remaining = games.filter((m) => !done(m));
+    const base = {}; for (const id of ids) base[id] = 0;
+    for (const m of played) {
+      const hs = m.home.score, as = m.away.score;
+      if (hs > as) base[m.home.id] += 3; else if (hs < as) base[m.away.id] += 3;
+      else { base[m.home.id] += 1; base[m.away.id] += 1; }
+    }
+    const R = remaining.length, combos = 3 ** R;
     for (const id of ids) {
       let canTop2 = false;
       for (let mask = 0; mask < combos && !canTop2; mask++) {
-        const pts = {}; for (const x of ids) pts[x] = groupPts[x] || 0;
+        const pts = { ...base }, res = [];
         let mm = mask;
         for (let i = 0; i < R; i++) {
-          const o = mm % 3; mm = (mm - o) / 3; const [h, a] = games[i];
-          if (o === 0) pts[h] += 3; else if (o === 1) pts[a] += 3; else { pts[h] += 1; pts[a] += 1; }
+          const o = mm % 3; mm = (mm - o) / 3; const m = remaining[i];
+          res.push([m.home.id, m.away.id, o]);
+          if (o === 0) pts[m.home.id] += 3; else if (o === 1) { pts[m.home.id] += 1; pts[m.away.id] += 1; } else pts[m.away.id] += 3;
         }
-        if (ids.filter((x) => x !== id && pts[x] > pts[id]).length <= 1) canTop2 = true;
+        let above = ids.filter((x) => x !== id && pts[x] > pts[id]).length;
+        const tied = ids.filter((x) => pts[x] === pts[id]);
+        if (tied.length > 1) {
+          const set = new Set(tied), h = {};
+          for (const x of tied) h[x] = 0;
+          for (const m of played) {
+            if (!set.has(m.home.id) || !set.has(m.away.id)) continue;
+            const hs = m.home.score, as = m.away.score;
+            if (hs > as) h[m.home.id] += 3; else if (hs < as) h[m.away.id] += 3; else { h[m.home.id] += 1; h[m.away.id] += 1; }
+          }
+          for (const [hId, aId, o] of res) {
+            if (!set.has(hId) || !set.has(aId)) continue;
+            if (o === 0) h[hId] += 3; else if (o === 1) { h[hId] += 1; h[aId] += 1; } else h[aId] += 3;
+          }
+          above += tied.filter((x) => x !== id && h[x] > h[id]).length;
+        }
+        if (above <= 1) canTop2 = true;
       }
       if (!canTop2) out.add(id);
     }

@@ -172,8 +172,10 @@ export function renderGroups(p) {
   for (const t of p.teams) (byGroup[t.group] ||= []).push(t);
   const letters = Object.keys(byGroup).sort();
   return `<div class="groups">` + letters.map((L) => {
+    // Order by the official FIFA tiebreaker rank computed in the engine
+    // (points → head-to-head → overall GD → goals), falling back to points.
     const teams = byGroup[L].slice().sort((a, b) =>
-      b.matchPoints - a.matchPoints || b.gd - a.gd || b.gf - a.gf || a.name.localeCompare(b.name));
+      (a.groupRank || 99) - (b.groupRank || 99) || b.groupPts - a.groupPts);
     const rows = teams.map((t, i) => {
       const col = colourFor(p, t.owner);
       const mark = t.status === 'through' ? ' <span class="qmark up">✅</span>' : isOut(t.status) ? ' <span class="qmark down">▼</span>' : '';
@@ -181,7 +183,7 @@ export function renderGroups(p) {
         <span class="rk">${i + 1}</span>
         ${flag(t.flag)}
         <span class="nm"><span class="own" style="background:${col}" title="${esc(t.owner)}"></span>${esc(t.name)}${mark}</span>
-        <span class="pts">${t.matchPoints}</span>
+        <span class="pts">${t.groupPts}</span>
       </div>`;
     }).join('');
     return `<div class="card grp-card"><h3>Group ${esc(L)}</h3>${rows}</div>`;
